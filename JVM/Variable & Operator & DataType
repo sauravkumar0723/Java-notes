@@ -1,1 +1,168 @@
 ### Variable & Operator & DataType
+
+## Variable --> is a Name given to memory location which can store the data, read the data & modify the data.
+                               ↓
+                               ↓
+- There are three steps to creating Variables
+ - 1. Declaration -> int age; // 
+                    ↓
+          create variable with data type and name.
+ - 2. Initalization -> int age = 2;
+                     ↓
+           assign the first Value.
+ - 3. Assignment -> age = 25;
+                  ↓
+               change value later. 
+
+### Concentation ---> Joining text and data to make one message.
+     --> we use ' + ' Symbole for this
+
+### Operators
+        ↓
+- are Special Symbol or Keywords used to Perform Operations on variables and value Known as Operands.
+
+-  1. Unary 
+-  2. Binary
+-  3. Ternary
+
+** Types of Operators 
+               ↓
+    - 1. Airthmetic Operatos
+-  Used to perform basic mathematical operations.
+          |---------|-------------|
+             | + | Addition |
+             | - | Subtraction |
+             | * | Multiplication |
+             | / | Division |
+             | % | Modulus |
+
+Example:
+int a = 10, b = 3;
+System.out.println(a + b); // 13
+
+** Relational (Comparison) Operators
+-   Used to compare two values.  
+-   Result is always **boolean** (`true` or `false`).
+            | Operator | Meaning |
+            |---------|---------|
+            | == | Equal to |
+            | != | Not equal to |
+            | > | Greater than |
+            | < | Less than |
+            | >= | Greater than or equal to |
+            | <= | Less than or equal to |
+
+### Example
+int a = 10, b = 20;
+System.out.println(a == b); // false
+System.out.println(a != b); // true
+System.out.println(a > b);  // false
+System.out.println(a < b);  // true
+            ↓
+** Logical Operators
+- Used to combine or invert boolean expressions.  
+- Result is always **boolean**.
+       | Operator | Description |
+       |---------|-------------|
+       | && | Logical AND |
+       | || | Logical OR |
+       | ! | Logical NOT |
+### Example
+boolean a = true;
+boolean b = false;
+System.out.println(a && b); // false
+System.out.println(a || b); // true
+System.out.println(!a);     // false
+            ↓
+** Assignment Operators
+- Used to assign values to variables.
+       | Operator | Example | Meaning |
+       |---------|---------|---------|
+       | = | a = 10 | Assign |
+       | += | a += 5 | a = a + 5 |
+       | -= | a -= 5 | a = a - 5 |
+       | *= | a *= 5 | a = a * 5 |
+       | /= | a /= 5 | a = a / 5 |
+       | %= | a %= 5 | a = a % 5 |
+
+### Example
+int a = 10;
+a += 5; // 15
+a -= 3; // 12
+         ↓
+** Unary Operators
+- Operate on a single operand.
+     | Operator | Description |
+     |---------|-------------|
+     | + | Unary plus |
+     | - | Unary minus |
+     | ++ | Increment |
+     | -- | Decrement |
+     | ! | Logical NOT |
+
+### Example
+int a = 5;
+System.out.println(++a); // 6
+System.out.println(--a); // 5
+boolean b = true;
+System.out.println(!b);  // false
+          ↓
+** Bitwise Operators
+- Operate on bits (0 and 1).
+     | Operator | Meaning |
+     |---------|---------|
+     | & | Bitwise AND |
+     | \| | Bitwise OR |
+     | ^ | Bitwise XOR |
+     | ~ | Bitwise Complement |
+     | << | Left shift |
+     | >> | Right shift |
+     | >>> | Unsigned right shift |
+### Example
+int a = 5;  // 0101
+int b = 3;  // 0011
+System.out.println(a & b); // 1
+System.out.println(a | b); // 7
+       ↓
+** Ternary Operator
+- Shorthand for if-else statement.
+** Syntax
+condition ? expression1 : expression2;
+### Example
+int a = 10, b = 20;
+int max = (a > b) ? a : b;
+System.out.println(max);
+      ↓
+** instanceof Operator
+- Used to check object type at runtime.
+    String s = "Java";
+       if (s instanceof String) {
+           System.out.println("It is a String");
+        }
+              *****------------*****
+### Data Types
+--> what type of data a variable can store in a programming language
+                     ↓
+- 1. Primitive(Not considered as objects)
+- 2. Non-Primitive(Considered as objects) 
+            *****---------------*****
+
+### Type Casting
+-    Type casting means converting one data type into another.
+                       ↓
+-- 1. Implicit Type Casting (Widening)
+- Automatically done by Java.  
+- Smaller data type → larger data type.
+               ↓
+- Order: byte → short → int → long → float → double
+
+--2. Explicit Type Casting (Narrowing)
+                  ↓
+- Explicit type casting means converting a **larger data type into a smaller data type** manually.
+
+
+
+
+   
+
+
