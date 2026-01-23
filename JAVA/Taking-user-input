@@ -1,0 +1,21 @@
+###     Taking User Input in Java
+Scanner sc = new Scanner(System.in)
+
+          System.in-> take one paremeter
+           ==> for system i am taking the input from user will give for take from the system
+* Scanner -> inbuilt class in java.
+-> inside inner class method are already present
+   // taking input
+    Common Methods
+-> int a = sc.nextInt();        // integer
+-> double d = sc.nextDouble(); // double
+-> String s = sc.next();       // single word
+-> String line = sc.nextLine();// full line
+
+
+** Using BufferedReader (Fast Input)
+--> Faster than Scanner, used in competitive programming.
+BufferedReader br =
+    new BufferedReader(new InputStreamReader(System.in));
+String s = br.readLine();
+int n = Integer.parseInt(s);
