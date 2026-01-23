@@ -1,0 +1,116 @@
+### Control-Constructs:- 
+   --> Control constructs determine the order in which statements in a Java program are executed.
+             ↓
+             ↓
+   1. Conditional
+             ↓
+   => Conditional control constructs allow a program to make decisions based on conditions.
+              ↓
+       if Statement
+              ↓ 
+ =>Executes a block only if condition is true.
+ E.g:-       if (age >= 18) {
+    System.out.println("Eligible to vote");
+}
+  2. if–else Statement
+            ↓
+ Chooses between two blocks
+             ↓
+condition → true  → block A
+          → false → block B
+              ↓
+E.g :- if (marks >= 40) {
+    System.out.println("Pass");
+} else {
+    System.out.println("Fail");
+}
+ 3. Else-if
+       ↓
+-> Used when multiple conditions are checked
+        ↓
+ cond1 → true → block1
+     → false → cond2 → block2
+     → false → cond3 → block3
+     → false → else block
+         ↓
+     if (marks >= 90) {
+         grade = 'A';
+    } else if (marks >= 75) {
+        grade = 'B';
+     } else if (marks >= 60) {
+           grade = 'C';
+     } else {
+    grade = 'D';
+}
+
+4.    switch Statement
+        ↓
+       Selects execution based on expression value
+=> expression → case → execute → break
+            ↓
+E.g:- switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    default:
+        System.out.println("Invalid day");
+}
+         ↓
+5. Ternary Operator (?:)
+         ↓
+ Short form of if–else
+          ↓
+condition ? value_if_true : value_if_false
+ ###    2. Looping 
+      -> Repeat execution
+      i.  for Loop
+       for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+      ii. while Loop
+       while (i <= 5) {
+    i++;
+} 
+    iii. do-while loop
+          ↓
+         do {
+    i++;
+} while (i <= 5);
+    
+3. Jumping
+   --> Jumping constructs are used to transfer control immediately from one part of a program to another.
+                            ↓
+                            ↓
+    i. break
+         ↓
+-> Terminates the loop or switch statement.
+-->     loop / switch → break → exit
+             ↓
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) break;
+    System.out.println(i);
+}
+
+ii. continue
+        ↓
+-> Skips the current iteration and moves to the next one.
+        ↓
+--> loop → continue → next iteration
+        ↓
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) continue;
+    System.out.println(i);
+}
+iii. return
+       ↓
+ -->  Exits from a method and sends control back to the calling method.
+       ↓
+method → return → caller
+       ↓
+public static int add(int a, int b) {
+    return a + b;
+}
+
