@@ -1,0 +1,92 @@
+### Diving into Oops
+  Oop -> Object Oriented Programming:-> 
+              --> Define as an approach to problem-solving to utilize the program to address the real-world Problem.
+              --> It allow us to model and represent these Problem an a structure and  Organized Manner, Making it easier to create efficient and effective solution.
+
+
+   ** Objects & Classes             
+                Class:- 
+                  -> Class can be define as a template/bluePrint with the help of JVM can create an Objects
+                  Note:-> Class should be begin with a Capital Letter
+                       -> If calss should have multiple Word. Every first word will be Capital Letter.
+                  Object:-
+                    -> An Objects is an instance of class that contains real value stored in memory. 
+                     -> it creates Based on the bluePrint(class) and represent something with properties(Variables) and behaviour(methods)
+                                                     ↓
+                                                     ↓
+                          Example:-
+                                                     Student
+                                   What it HAS                            What it DOES
+                                   {name}                                      {studey()}
+                                   {age}                                       {sleep()}
+                                   {roll}                                      {eat()}
+
+
+
+### CODE 
+          // we can creat a program of object and class
+             Class Student{
+             int age;
+             int roll;
+             String name;
+
+              pubic void study()
+              {
+                System.out.println("Student is studying");
+              }
+                 pubic void sleep()
+              {
+                System.out.println("Student is sleeping");
+              }
+              pubic void eat()
+              {
+                System.out.println("Student is eating");
+              }
+
+  // Main Method
+               public class Main 
+               {
+                 Public static void main(String[] args)
+                 {
+                   Student s1 = new Student();
+                   s1.name = "Saurav";
+                   s1.age = "23";
+                   s1.roll = "23"
+                     System.out.println(s1.name);
+                       System.out.println(s1.age);
+                      System.out.println(s1.eat);
+                     s1.study();
+                   s1.sleep();
+                   s1.eat();
+                 }
+               } 
+
+
+  // s1 -> is refrence variable
+  // new -> new  will create object of class
+
+  ## Dry Run:- code.
+     Main method starts
+     JVM
+       ↓
+      Main method starts
+        ↓
+Student object s1 is created
+        ↓
+Values assigned:
+name = "Saurav"
+age = 23
+roll = 23
+        ↓
+Printed outputs:
+Saurav
+23
+        ↓
+Method calls:
+study() → "Student is studying"
+sleep() → "Student is sleeping"
+eat()   → "Student is eating"
+        ↓
+Program ends
+
+    
