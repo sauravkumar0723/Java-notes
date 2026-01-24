@@ -1,0 +1,70 @@
+### Pattern Problem
+Q.1. Wap to print ****.
+Ans-> We wrtie only logic.
+                  for (int i = 1; i <= 4; i++) {
+                        System.out.print("*");
+                  }
+
+Q.2. Wap to print
+*
+*
+*
+*
+ Ans->                     for (int i = 1; i <= 4; i++) {
+                                  System.out.println("*");
+                           }
+Q.3 Wap to print 
+*****
+*****
+*****
+*****
+*****
+Ans->                   for (int i = 1; i <= 5; i++) {
+                             for (int j = 1; j <= 5; j++)
+                              {
+                                  System.out.print("*");
+                              }
+                           System.out.println();
+                          }
+
+Q.4. Wap to print    
+*
+**
+***
+****
+*****
+Ans->                          for (int i = 1; i <= 5; i++) {
+                                    for (int j = 1; j <= i; j++)
+                                    {
+                                        System.out.print("*");
+                                     }
+                                    System.out.println();
+                              }
+
+Q.5 Wap to print 
+1
+12
+123
+1234
+12345
+Ans->                             for (int i = 1; i <= 5; i++) {
+                                    for (int j = 1; j <= i; j++)
+                                    {
+                                        System.out.print(j);
+                                     }
+                                    System.out.println();
+                              }    
+Q.6 Wap to print     
+*****
+****
+***
+**
+*
+Ans->                             for (int i = 1; i <= 5; i++) {
+                                    for (int j = 1; j <= 5-i +1; j++)
+                                    {
+                                        System.out.print(*);
+                                     }
+                                    System.out.println();
+                                 }   
+
