@@ -1,0 +1,91 @@
+### Static
+--> Static keyword is used to define class-level memebr, static variable, and methods belong to class not to any individiual object.
+--> this means they can acess without creating an Object
+
+## fundamental Concept of Static
+ --> Static Variable
+ --> Static Block
+ --> Static Methods
+
+ ** Static Variable:- 
+  --> whose value persists through entire Program excution.
+  --> it's allocated memory once and remain in memory until the program ends
+
+  ** Static Block
+  --> Excuted Once , when the class is first loaded into memory, it is used to initalize static variable or perform one setup task
+
+  ** Static methods
+  --> Excute only once when class is loaded
+
+  ** Default value of Static variable is 
+       int -> 0;
+       double -> 0.0
+       String -> null;
+       boolean -> false;
+
+** Code
+    class Program
+    {
+       Static int a;
+       Static int b;
+       int p;
+       int q;
+       static {
+          System.out.println("Inside static block");
+          a = 10;
+          b = 20;
+          }
+           {
+              System.out.println("Inside non-static block");
+              p = 100;
+              q = 200;
+           }
+
+           Static disp1(){
+           System.out.println("Inside static method ");
+           System.out.println(a);
+           System.out.println(b);
+           }
+            Static disp2(){
+           System.out.println("Inside non-static method ");
+           System.out.println(p);
+           System.out.println(q);
+           }
+    }
+            public Static void main(String[] args) {
+            Program p1 = new Program();
+            p1.disp1();
+            p2.disp();
+            }
+
+
+
+       ### SHORT  Dry-Run of this code   
+ -->   Class load hoti hai → static variables a=0, b=0 create hote hain
+- Static block run (once) → output: Inside static block, values: a=10, b=20
+- main() start hota hai
+- Object create (new Program())
+- instance vars: p=0, q=0
+- non-static block run → output: Inside non-static block, values: p=100, q=200
+- Static method disp1() call → prints 10, 20
+- Non-static method disp2() call → prints 100, 200
+
+O/P   --> Inside static block
+          Inside non-static block
+          Inside static method
+          10
+           20
+        Inside non-static method
+        100
+        200
+
+### Memory Managments 
+   <p align="center">
+  <img src="images/static.jpg" width="900">
+</p>
+
+
+
+          
+
+   
