@@ -1,0 +1,33 @@
+### Encapsulation
+--> Encapsulation is the concept of wrapping data(Variables) and Code (Methods) into a Single Unit and Hidding the internal details from Outside Acess.
+--> It can achieved by declaring the class variables as Private & creating Public Getter and Setter methods to acess and Update those Variables.
+--< Main Purpose of encapsulation is to Protect data from unwanted acess or modification.
+
+Example :- An ATM is good example. you can only acess your account through specfic Options(buttons) and you cannot directly modify you bank blance. machine Control how your request is handaled.
+
+## Code:- 
+           class Book {
+               private int pageNo;
+                  public void Setter(int x) // setter means set the data
+                     {
+                        if(x>0)
+                          {
+                             pageNo = x;
+                            } else {
+                               System.out.Println("Worng data");
+                            }
+                       }
+                      public void Getter() // getter means get the data
+                        {
+                          System.out.println(pageNo);
+                         }
+                }
+               public class Main {
+                  public static void main(String[] args)
+                  {
+                    Book b = new Book();
+                    b.Setter(10);
+                    b.Getter();
+                 }
+             }
+                         
