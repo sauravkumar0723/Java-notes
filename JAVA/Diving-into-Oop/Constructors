@@ -1,0 +1,37 @@
+### Constructor
+--> is a special method in java that is automatically created whem Object is created.
+e.g:- in a class student , constructor might initialize fields like name, age and grade when a new Object is created
+ *** Fundamental concept of constructor.
+- constructor have must be same name as the class name.
+- it has no return type(not even void).
+- It is called automatically callend when object is created.
+
+** there are two types of constructor
+1. Default Constructor(no parameter)
+2. Parameterized Constructor(takes input values)
+
+*** Constructor code 
+   class Student {
+      int age;
+      String name;
+
+      Student(int a, String b)
+      {
+         age = a;
+         name = b;
+      }
+      void display()
+        {
+          System.out.println(age);
+          System.out.println(name);
+        }
+  Public class Main {
+     Public static void main(sting[] args)
+        {
+          Student s1 = new Strudent(1, "saurav");
+          s1.display();
+        }
+ }
+---------------code of constructor----------------------
+
+
