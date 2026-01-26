@@ -90,6 +90,42 @@ public class Main {
 	}
 }
 
+------Default Constructor
+--> Constructor with no Parameter that is automatically created by the java compiler.
+
+-------Constructor Overloading-----------
+--> means having  more than one Constructor in same class but each constructor has different Parameter.
+
+******Code******
+class Student {
+  int roll;
+  Stirng name;
+  Studetn()
+     {
+       roll = 77;    //  0 parametrized constructor
+       name = saurav;
+     }
+       Student(int roll, String name)
+         {
+           this.roll = roll; // parameterized accepting
+            this.name = name;
+          }
+     void display {
+       System.out.println(roll);
+        System.out.println(name);
+    }
+ }
+
+public class Main {
+    public static void main(string[] args)
+      {
+         Student s1 = new Student();
+          s1.display();
+         Student s2 = new Student(09, "saurav");
+         s2.display();
+      }
+}
+
 
 
 
