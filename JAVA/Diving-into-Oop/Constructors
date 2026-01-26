@@ -34,4 +34,65 @@ e.g:- in a class student , constructor might initialize fields like name, age an
  }
 ---------------code of constructor----------------------
 
+### SHADOW PROBLEM
+
+     public class Student {
+	int roll;
+	String name;
+	double per;
+	
+	Student(int roll, String name, double per)
+	{
+		roll = roll;  // this will create a shadow problem.
+		name = name;
+		per = per;
+	}
+	void disp()
+	{
+		System.out.println(roll);
+		System.out.println(name);
+		System.out.println(per);
+	}
+}
+-----Main method------
+public class Main {
+	public static void main(String[] args) {
+		Student s1 = new Student(12,"Saurav", 89.9);
+		s1.disp();
+	}
+}
+Note:-  Local variables names and instances variables names they are the same there is the name class is occur this problem is called shadowing problem
+------OverCome of Shadow Problem we can use this keyword.-------
+
+     public class Student {
+	int roll;
+	String name;
+	double per;
+	
+	Student(int roll, String name, double per)
+	{
+		this.roll = roll;  // this will create a shadow problem.
+		this.name = name;
+		this.per = per;
+	}
+	void disp()
+	{
+		System.out.println(roll);
+		System.out.println(name);
+		System.out.println(per);
+	}
+}
+-----Main method------
+public class Main {
+	public static void main(String[] args) {
+		Student s1 = new Student(12,"Saurav", 89.9);
+		s1.disp();
+	}
+}
+
+
+
+
+
+
 
