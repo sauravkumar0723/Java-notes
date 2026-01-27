@@ -111,3 +111,37 @@ class Program {
 }
 
 ------------------*****--------------------
+###  Hybrid Inheritance
+--> Hybrid inheritance is a combination of two or more types of inheritance (like single, multiple, hierarchical).
+****Code****
+            class A {
+    void methodA() {
+        System.out.println("Class A method");
+    }
+}
+class B extends A {
+    void methodB() {
+        System.out.println("Class B method");
+    }
+}
+interface C {
+    void methodC();
+}
+class D extends B implements C {
+    public void methodC() {
+        System.out.println("Class C method");
+    }
+    void methodD() {
+        System.out.println("Class D method");
+    }
+}
+public class HybridInheritanceDemo {
+    public static void main(String[] args) {
+        D obj = new D();
+        obj.methodA();  // from A
+        obj.methodB();  // from B
+        obj.methodC();  // from C
+        obj.methodD();  // from D
+    }
+}
+-------------------**********----------------
