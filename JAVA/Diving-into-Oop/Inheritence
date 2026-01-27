@@ -36,4 +36,43 @@ public class Main {
           s1.display();
       }
 }
+
+2. ---------Multi-level Inheritence---------
+--> mukti-level inheritence is when a class which itself inherit from another class. it's form a chain of inheritence
+chain:-> parent->child->GrandChild.
+**Code**
+class Program1 {
+void display()
+{
+System.out.println("Inside a Program1");
+}
+}
+public class Program2 extends Program1 {
+    void display2(){
+System.out.println("Inside display 2");
+   }
+ }
+public class Program3 extends Program2 {
+void display3()
+{
+   System.out.println("Inside dispaly2");
+}
+}
+public class Main {
+   public static void main(String[] args)
+   {
+      Program3 p3 = new Program3();
+      p3.display();
+      p3.display2();
+      p3.display3();
+   }
+}
+
+--> Output
+Inside a Program1
+Inside display 2
+Inside dispaly2
+
+-------------******---------------
+
      
