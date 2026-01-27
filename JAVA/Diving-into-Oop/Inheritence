@@ -145,3 +145,16 @@ public class HybridInheritanceDemo {
     }
 }
 -------------------**********----------------
+### Multiple Inheritence
+--> Technically not allowed in java.
+    --> beacause one child have two Problem? Ans => No, one child have only one Parents.
+--> It's create a Ambiguity Problem.
+--> This is technically called Diamond Problem.
+-> Multiple Inheritence is not allowed in java Programming language.
+--> but it is Possible to achived in Java Programming language with the help of interface.
+***Diagram***
+ Class A   Class B
+    \        /
+     \      /
+      Class C   ❌ NOT ALLOWED
+
