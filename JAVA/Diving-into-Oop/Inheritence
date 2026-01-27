@@ -74,5 +74,40 @@ Inside display 2
 Inside dispaly2
 
 -------------******---------------
+3. -------------Herarichial inheritence--------------
+      --> Is a type of inheritence where two or more classes inherit from the same base classes
+KEY Points:-> one Parent class but two child class.
+                 Program
+                 /     \
+             Student   Child1
+***Code***
+class Program {
+    void disp1()
+   {
+      System.out.println("Inside a Program class");
+   }
+}
+  class Student extends Program {
+      void disp2()
+   {
+      System.out.println("Inside a Student class");
+   } 
+}
+  class Child1 extends Program {
+       void disp3()
+   {
+      System.out.println("Inside a child1 class");
+   } 
+}
+ public class Main {
+     public static void main(String[] args) {
+          Child1 ch = new Child1();
+         ch.disp1();   // Parent method
+        ch.disp3();   // Child1 method
+        Student st = new Student();
+        st.disp1();   // Parent method
+        st.disp2();   // Student method
+  }
+}
 
-     
+------------------*****--------------------
