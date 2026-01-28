@@ -1,0 +1,92 @@
+### Constructore Chaining
+1. Constructor chainig using Super().
+i. Process:- when we have created Object of child class but Parent class Constructor is Excuted First.
+class Program1 {
+   Program1()
+    {
+       Super(); //are already there but not visible.
+       System.out.println("Program1 Constructor");
+    }
+  class Program2 extends Program1 {
+      Program2()
+       {
+         Super();
+        System.out.println("Program2 Constructor");
+       }
+ public class main {
+    public static void main(String[] args) {
+       Program2 p = new Program2();
+   }
+ }
+
+OUTPUT - Program1 Constructor
+         Program2 Constructor
+
+---> we are create object of child class but Parent class is excuted first.
+
+Note :-1.  if the class doesn't have any Parent automatically Object class will become Parent.
+      2. in this class i am spraking parent class automatically one constructor will inserted that is default constructor
+            public Parent {
+                super();
+           }
+      3. if you have any Parent then object class not will become parent
+**** Befor compilation 
+  class Parent {
+     void disp() {
+       System.out.println("inside display");
+     }
+class Child extends Parent {
+     void disp2() {
+       System.out.println("inside display2");
+     }
+      public class main {
+    public static void main(String[] args) {
+      Child1 c1 = new Child1();
+       c1.disp();
+       c1.disp2();
+ }
+
+
+
+*****AFTER Compilation*********
+class Object {
+    public object() {
+
+    }
+}
+class Parent extend Object {
+   public parent() {
+      super();
+   }
+}
+void disp1() {
+     System.out.println("Inside disp1");
+  }
+}
+class Child1 extends Parent {
+     public child1() {
+      super();
+   }
+}
+void disp2() {
+     System.out.println("Inside disp2");
+  }
+}
+class Main Extends Object {
+     public main()
+     {
+       super();
+     }
+ Public static main(Strings[] args) {
+     Child1 c1 = new Child1();
+     c1.disp1();
+     c1.disp2();
+
+----> Definition :-> Constructor chaining is a process where a child class constructor calls another to reuse initialize logic. 
+   --> if the class within the same class you use this().
+   --> if it's calling the constructor form parents then you use super().
+
+***Super:= > Super is the calling the consturctor of Parent Class.
+      --> Super must be very first line of constructor. if you try else where java will throw a error.
+      --> Parent class have no argumet (default aconstructor ) will insert super() automatically.
+
