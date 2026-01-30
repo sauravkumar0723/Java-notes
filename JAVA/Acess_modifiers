@@ -1,0 +1,50 @@
+#### Acess Specifiers in java
+-- Access specifiers control the visibility and accessibility of classes, methods, variables, and constructors in Java.
+-- They help achieve encapsulation, security, and controlled access.
+
+**Types of Access Specifiers
+-- Java has four access specifiers:
+1. public
+2. protected
+3. default (no keyword)
+4. private
+-----------
+1. Public
+- Accessible from anywhere
+- No access restriction
+public class Example {
+    public int x = 10;
+    public void show() {
+        System.out.println("Public access");
+    }
+}
+2. Protected
+- Accessible within:
+- Same package
+Subclasses (even in different packages)
+class Parent {
+    protected void display() {
+        System.out.println("Protected access");
+    }
+}
+=> Commonly used in inheritance
+3. Default (Package-Private)
+ -No keyword is used
+- Accessible only within the same package
+class Demo {
+    void message() {   // default access
+        System.out.println("Default access");
+    }
+}
+
+=> Not accessible outside the package
+
+4. Private
+- Accessible only inside the same class
+- Highest level of data hiding
+class Test {
+    private int data = 100;
+    private void show() {
+        System.out.println("Private access");
+    }
+}
