@@ -90,3 +90,25 @@ class Main Extends Object {
       --> Super must be very first line of constructor. if you try else where java will throw a error.
       --> Parent class have no argumet (default aconstructor ) will insert super() automatically.
 
+
+*** This:= > This is a special keyword in java used to call another constructor of the same class from within a constructor it helps in constructor chaining , allowing code resuability and reducing duplication.
+--Code :- >
+ class Demo {
+   Demo() {
+     this(10);
+       System.out.println("inside 0 per cons");
+ } 
+     Demo(int a) {
+         this(10,20);
+       System.out.println("inside 1 per constant");
+}
+Demo(int a, int b) {
+   System.out.println("inside 2 per const");
+   }
+ }
+class Main {
+    public static void main(String[] args) {
+       Demo d = new Demo();
+ }
+}
+
