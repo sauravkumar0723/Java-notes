@@ -1,0 +1,39 @@
+### Types of methods during inheritence
+1. Inherited Methods
+-- Methods of the parent (super) class that are directly available in the child class.
+-- No need to redefine them.
+class Parent {
+    void show() {
+        System.out.println("Parent method");
+    }
+}
+class Child extends Parent {
+    void test() {
+        show(); // inherited method
+    }
+}  
+2. Overridden Methods
+--Child class provides its own implementation of a parent class method.
+--Method name, return type, and parameters must be same.
+class Parent {
+    void display() {
+        System.out.println("Parent display");
+    }
+}
+class Child extends Parent {
+    @Override
+    void display() {
+        System.out.println("Child display");
+    }
+}
+
+
+3. New (Child-Specific) Methods
+
+-- Methods that exist only in the child class.
+-- Parent class cannot access them.
+class Child extends Parent {
+    void childMethod() {
+        System.out.println("Only in child");
+    }
+}
