@@ -17,3 +17,91 @@ E>g: HOUSE have a room. so room cannot exist independently of the house.
 
 Note:- i.) whenever you see the solid diamond arrow this is composition object.
        ii.) whenever you see the diamond only arrow this is The aggregate Object.
+
+---------****Composition code*****--------
+class Os {
+  Os()
+  {
+      System.out.println("OS is installed");
+  }
+  void checkOs()
+    {
+        Syetem.out.println("Os is still excuting");
+    }
+ }
+   class Mobile {
+   OS a = new Mobile();
+   Mobile() 
+   {
+     Systep.out.println("Mobile created with os");
+   }
+}
+class Main 
+{
+  public static void main(String[] args) 
+{
+      Mobile m = new Mobile();
+      m.o.checkOs();
+  }
+}
+
+
+-------------***Aggreagate***--------------
+public class Os {
+	Os()
+	{
+		System.out.println("OS is initialized ");
+	}
+	
+	void checkOs()
+	{
+		System.out.println("Os is still excuting: ");
+	}
+}
+
+public class Charger {
+	String name;
+	Charger (String s)
+	{
+		name = s;
+		System.out.println("charger created.");
+	}
+	void getCharger()
+	{
+		System.out.println("charger can be used");
+	}
+}
+
+public class Mobile {
+	Os o = new Os();
+	Mobile ()
+	{
+		System.out.println("Mobile created with os: ");
+	}
+	void hasA(Charger c)
+	{
+		System.out.println("charger acquired and getting charged. ");
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Mobile m = new Mobile();
+		Charger c = new Charger("HP");
+		m.hasA(c);
+		m.o.checkOs();
+		c.getCharger();
+		m=null;
+	}
+Output:-
+OS is initialized 
+Mobile created with os: 
+charger created.
+charger acquired and getting charged. 
+Os is still excuting: 
+charger can be used
+
+
+
+
+
