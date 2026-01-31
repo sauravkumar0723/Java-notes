@@ -1,0 +1,30 @@
+### Final_keyword
+-- cannot ber override by child class.
+-- the final keyword is used to declare something that cannot be change. it can be used with:-
+     Variables
+     Methods
+     Classes 
+** final keyword important
+- prevent mistake-- like pi = 3.14 if we make the final no one can change it later by mistake
+- protect importent code
+
+**  CODE
+final class Parent {
+    final int x = 10;
+    final void show() {
+        System.out.println("Final method in Parent");
+        System.out.println("Final variable x = " + x);
+    }
+}
+class Child {   // cannot extend Parent
+    void test() {
+        System.out.println("Child class");
+    }
+}
+public class FinalKeywordDemo {
+    public static void main(String[] args) {
+        Parent obj = new Parent();
+        obj.show();
+        // obj.x = 20;   // ❌ Compile-time error (final variable)
+    }
+}
