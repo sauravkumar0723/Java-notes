@@ -1,0 +1,19 @@
+### HAS_A_Relationship
+-- The Has A relationship refers to the situation where on class conatined object of another class.
+
+*** Types of Has- A- Relationship
+-- there are two main types of has- A Relationship
+1. Aggregation :- The "Friends with Benefits" of object relationship
+2. Composition :- The "Till Do us Part" of object connections
+
+**Aggregation :- is a type of HAS_A_Relationship where the contained objects can exist independently in container objects. the represent a weak relationship b/w them.
+e.g :- A university HAS-A professor
+professor can exist independently of the university.
+
+** Composition:- A composition is Strong type HAS-A-Relationship where the contained the object cannot exist independently of the container object.
+--> the represent a strong relationship b/w the object, indiaceting a whole-part Realtionship
+--> if conatiner object is destroy then containe object is also destroy.
+E>g: HOUSE have a room. so room cannot exist independently of the house.
+
+Note:- i.) whenever you see the solid diamond arrow this is composition object.
+       ii.) whenever you see the diamond only arrow this is The aggregate Object.
