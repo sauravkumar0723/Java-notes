@@ -1,2 +1,13 @@
 #### Polymorphism
 --------UPCASTING---------
+-- upcasting is a features in java where a child class object is stored  in parent class refrence.
+-- this happens automatically and is part of java inheritence system
+ **  Why we use it.
+    --  to treat multiple type as one
+    --  to write cleanes and reusable code.
+    --  to allow java to decide behaviour at runtime.
+
+Q. IS upcasting done implicitly or explicitly in java?
+  -- Upcasting is done implicitly in java since the subclass object is types of a its super class.
+     e.g:- my friend went to a resturant and ordered a pizza but instead of saying pizza he just told bring me a food. waiter will serve a general food --> food  ---> what he actually gets a pizza.
+
