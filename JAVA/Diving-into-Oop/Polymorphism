@@ -11,3 +11,48 @@ Q. IS upcasting done implicitly or explicitly in java?
   -- Upcasting is done implicitly in java since the subclass object is types of a its super class.
      e.g:- my friend went to a resturant and ordered a pizza but instead of saying pizza he just told bring me a food. waiter will serve a general food --> food  ---> what he actually gets a pizza.
 
+****CODE****
+class Developer {
+   void work() {
+       System.out.println("Developer working");
+    }
+    void project() {
+     System.out.println("Developer doing project");
+   }
+}
+public class JavaDevloper extends Developer
+{
+	void work() {
+		System.out.println("JavaDevloper is working");
+	}
+	void project()
+	{
+		System.out.println("JavaDevloper is doing java Project");
+	}
+}
+public class PythonDevloper  extends Developer
+{	
+	void work() 
+	{
+		System.out.println("PythonDevloper is doing python programming");
+	}
+	void project()
+	{
+		System.out.println("PythonDevloper is doing a Python Project");
+	}
+}
+## Main method
+public class Main {
+	public static void main(String[] args) {
+		Developer dev = new JavaDevloper();
+		dev.work();
+		dev.project();
+		
+		Developer dev1 = new PythonDevloper();
+		dev1.work();
+		dev1.project();	
+	}
+}
+
+Note :- whenever you have to see one to mainy forms is known as Polymorphism.
+e.g: in everyday life is a water water can exits in multiple states. solid(ice),liquid(water), and gas (steam).
