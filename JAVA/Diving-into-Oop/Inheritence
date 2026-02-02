@@ -144,6 +144,7 @@ public class HybridInheritanceDemo {
         obj.methodD();  // from D
     }
 }
+
 -------------------**********----------------
 ### Multiple Inheritence
 --> Technically not allowed in java.
