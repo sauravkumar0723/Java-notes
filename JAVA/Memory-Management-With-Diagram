@@ -48,7 +48,7 @@ Stores:
        ->Local variables
        ->Method calls
        ->Reference variables
--> Thread-specific (each thread has its own stack)
+-> Thread-Specific (each thread has its own stack)
 -> Memory is freed automatically when method execution ends
 -> Very fast access
 
