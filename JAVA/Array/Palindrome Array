@@ -1,0 +1,39 @@
+####    Palindrome Array
+import java.util.Scanner;
+
+public class PalindromeArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter array size: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter array elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        boolean isPalindrome = true;
+        for (int i = 0; i < n / 2; i++) {
+            if (arr[i] != arr[n - 1 - i]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+        if (isPalindrome)
+            System.out.println("Array is Palindrome");
+        else
+            System.out.println("Array is NOT Palindrome");
+    }
+}
+
+Sample Input
+Enter array size: 5
+Enter array elements:
+1 2 3 2 1
+Output
+Array is Palindrome
+Non-Palindrome Example
+Input
+1 2 3 4 5
+Output
+
+Array is NOT Palindrome
