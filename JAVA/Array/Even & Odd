@@ -1,0 +1,19 @@
+####   Even & Odd Elements Separate (ALAG PROGRAM)
+public class EvenOdd {
+    public static void main(String[] args) {
+        int[] arr = {10, 15, 20, 25, 30};
+        System.out.print("Even elements: ");
+        for (int x : arr) {
+            if (x % 2 == 0)
+                System.out.print(x + " ");
+        }
+        System.out.print("\nOdd elements: ");
+        for (int x : arr) {
+            if (x % 2 != 0)
+                System.out.print(x + " ");
+        }
+    }
+}
+ Output
+Even elements: 10 20 30
+Odd elements: 15 25
