@@ -1,4 +1,5 @@
 ####   Merge Two Arrays
+CODE:-
 import java.util.Scanner;
 
 public class MergeArrays {
