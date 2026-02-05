@@ -1,4 +1,5 @@
 ## // Count how many values are the even
+CODE:- 
 import java.util.Scanner;
 public class CountEven {
 	public static void main(String[] args) {
