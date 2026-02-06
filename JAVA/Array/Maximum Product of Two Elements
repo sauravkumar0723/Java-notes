@@ -1,0 +1,38 @@
+#### Maximum Product of Two Elements
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class MaxProduct {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // Input array size
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        // Input array elements
+        System.out.println("Enter array elements:");
+        for(int i=0; i<n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        if(n < 2) {
+            System.out.println("Array must have at least 2 elements!");
+            return;
+        }
+        Arrays.sort(arr); // ascending order
+        int product1 = arr[n-1] * arr[n-2]; // largest two
+        int product2 = arr[0] * arr[1];     // smallest two (in case of negative numbers)
+        int maxProduct = Math.max(product1, product2);
+        System.out.println("Maximum product of two elements = " + maxProduct);
+    }
+}
+Sample Input & Output
+
+Example 1:
+Enter size of array: 5
+Enter array elements:
+5 -10 20 2 3
+Output:
+Maximum product of two elements = 100
+Explanation: 20 * 5 = 100
+
+Maximum product of two elements = 200
