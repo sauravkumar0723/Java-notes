@@ -1,4 +1,4 @@
-  ###             JVM MEMORY
+  ###           JVM MEMORY
 
   ----------------------------------
  |            Heap Memory            |
@@ -37,13 +37,13 @@
 --> JVM manages memory using heap for objects, stack for method execution, and garbage collection for automatic memory cleanup
 
 ###    Heap Memory 
-->Purpose: Stores objects and instance variables
-->All objects created using new are stored here
-->Shared among all threads
-->Garbage Collector works on Heap memory
+-> Purpose: Stores objects and instance variables
+-> All objects created using new are stored here
+-> Shared among all threads
+-> Garbage Collector works on Heap memory
 
 ###      Stack Memory 
-Purpose: Method execution and local storage
+Purpose:- Method execution and local storage
 Stores:
        ->Local variables
        ->Method calls
@@ -53,7 +53,7 @@ Stores:
 -> Very fast access
 
 ###   Method Area / MetaSpace
--> Purpose: Stores class-level information
+-> Purpose:- Stores class-level information
 -> Class metadata
 -> Static variables
 -> Method bytecode
