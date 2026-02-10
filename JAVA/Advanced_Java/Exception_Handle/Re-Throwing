@@ -1,0 +1,116 @@
+### ReThrowing
+-- What Does "Rethrowing" Mean?
+
+- Rethrowing means that a method knows something went wrong but chooses not to handle the problem itself.
+- Instead, it passes the error (exception) to the method that called it.
+
+-- What Is throw ?
+- In Java, the throw keyword is used when you want to create and send an error manually.
+
+-- What Is throws ?
+-- The throws keyword is used in the method declaration to let others know that the method might throw an
+exception On.
+Common Interview Questions & Answers
+
+1. What is the difference between throw and throws in Java?
+Answer:
+-throw is used inside a method to actually throw an exception.
+-throws is used in the method declaration to indicate that a method might throw an exception.
+
+2. Can a method use both throw and throws ?
+Answer:
+-Yes! A method can declare that it might throw an exception using throws and actually throw one using throw inside the method body.
+
+3. Why should we use throws ?
+Answer:
+- When you don't want to handle the exception inside the method but want the caller to take responsibility, you use throws to warn them.
+4. What happens if you throw an exception and don't handle or declare it?
+Answer:
+- The program will not compile (for checked exceptions) or crash at runtime (for unchecked exceptions) if no one catches it.
+
+  CODE:- 
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) 
+	{
+		System.out.println("Main method execution started");
+		try {
+			divide();
+		} catch(Exception e) {
+			System.out.println("Exception handled in main method");
+		}
+		
+		System.out.println("Main method execution completed");
+   }
+    static void divide() 
+    {
+    	System.out.println("Division started");
+    	try
+    	{
+    	Scanner scan = new Scanner(System.in);
+    	System.out.println("Enter the value of a : ");
+    	int a = scan.nextInt();
+    	System.out.println("Enter the value of b: ");
+    	int b = scan.nextInt();
+    	int c = a/b;
+    	System.out.println(c);
+    	}
+    	catch (Exception e)
+    	{
+    	     System.out.println("Exception handled in divide method");
+    	     throw e;
+    	} 
+    	finally {
+    		System.out.println("Division is completed");
+    	}
+    }
+}
+  OUTPUT:- 
+Main method execution started
+Division started
+Enter the value of a : 
+10
+Enter the value of b: 
+0
+Exception handled in divide method
+Division is completed
+Exception handled in main method
+Main method execution completed
+
+
+      **** Ducking:-
+              Method does not handle the exception
+- It throws the exception to the calling method
+- Responsibility is ducked (passed on).
+Syntax                                                               
+          import java.util.Scanner;
+public class Ducking {
+	public static void main(String[] args) {
+		System.out.println("main method execution started");
+		try {
+			divide();
+		} catch (Exception e) {
+			System.out.println("Exception handled in main method");
+		}
+		System.out.println("main method execution completed");
+	}
+	static void divide() throws Exception
+	{
+		Scanner scan = new Scanner(System.in);
+    	System.out.println("Enter the value of a : ");
+    	int a = scan.nextInt();
+    	System.out.println("Enter the value of b: ");
+    	int b = scan.nextInt();
+    	int c = a/b;
+    	System.out.println(c);
+	}
+}
+  o/p:- 
+       main method execution started
+Enter the value of a : 
+10
+Enter the value of b: 
+0
+Exception handled in main method
+main method execution completed                                                                      
