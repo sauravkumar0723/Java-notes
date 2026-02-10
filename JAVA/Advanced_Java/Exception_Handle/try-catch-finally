@@ -1,0 +1,84 @@
+### try-catch-finally
+🔹 try block
+- Contains risky code
+- Exception may occur here
+🔹 catch block
+- Handles the exception
+- Prevents program crash
+- Can have multiple catch blocks
+🔹 finally block
+- Always executes (exception ho ya na ho)
+- Used for resource cleanup (closing file, DB, etc.)
+Syntax
+try {
+    // risky code
+} catch (ExceptionType e) {
+    // exception handling
+} finally {
+    // cleanup code
+}
+
+Key Points to Remember
+. Use try for risky code - This is where errors might happen.
+. Use catch to handle specific exceptions - Always catch the most accurate exception, not the general Exception .
+. Use finally to clean up - It always runs, whether or not there's an error.
+. Avoid return in finally - It can override returns from try or catch and cause confusion.
+. Don't leave catch blocks empty - Always give a message or fix the problem.
+. Use finally for important tasks like closing files, stopping connections, or cleaning up.
+
+Case 1:- if there is a no exception
+public class Main 
+{
+	public static void main(String[] args) {
+		try {
+			System.out.println("try");
+		} catch (Exception e) {
+			System.out.println("catch");
+		}
+		finally {
+			System.out.println("finally");
+		}
+	}
+}
+Output:- 
+try
+finally
+
+case2:- if an exception rise and handled
+public class Main1 {
+	public static void main(String[] args) {
+		try {
+			System.out.println("try");
+			System.out.println(10/0);
+		} catch (ArithmeticException e) {
+			System.out.println("catch");
+		}
+		finally {
+			System.out.println("finally");
+		}
+	}
+}
+Output:- 
+try
+catch
+finally
+
+Case3:- 
+if exception raised but not handled
+public class Main2 {
+	public static void main(String[] args) {
+		try {
+			System.out.println("try");
+			System.out.println(10/0);
+		} catch(NullPointerException e) {
+			System.out.println("catch");
+		} finally {
+			System.out.println("finally");
+		}
+	}
+}
+Output:- try
+finally
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at com.KodNest.trycatchFinally.Main2.main(Main2.java:7)
+
