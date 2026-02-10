@@ -1,0 +1,21 @@
+### When exception Occur
+NullPointerException
+When it occurs:
+➡️ When you try to access a method or variable of a null object
+Example:
+String s = null;
+System.out.println(s.length());
+Reason:
+➡️ The object does not exist (reference is null)
+ArithmeticException
+When it occurs:
+➡️ When an invalid arithmetic operation happens (usually division by zero)
+Example:
+int a = 10 / 0;
+Reason:
+➡️ Division by zero is not allowed
+One-line memory trick
+NullPointerException → Object is null
+ArithmeticException → Math operation is wrong
+e.t.c     
+-------------------
