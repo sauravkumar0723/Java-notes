@@ -1,0 +1,53 @@
+### Checked & Uncheck Exception
+// Checked Exceptions:- compiler giving error so we can handle it with try catch block.
+Checked Exceptions
+Checked at compile time
+- Must be handled using try–catch or declared using throws
+- Occur due to external resources
+- JVM forces handling
+Examples
+- IOException
+- SQLException
+- ClassNotFoundException
+- FileNotFoundException
+public class Main {
+	public static void main(String[] args) {
+		for(int i=1; i <= 5;i++) 
+		{
+		   System.out.println(i);
+		   try {
+		   Thread.sleep(3000);
+		   } 
+		   catch (InterruptedException e) {
+			e.printStackTrace();
+		    }
+		 }
+	}
+}
+
+// unchecked Exception is handled by programmer own
+Unchecked Exceptions
+- Checked at runtime
+- No compile-time checking
+- Caused by programming mistakes
+- Subclass of RuntimeException
+Examples
+- NullPointerException
+- ArithmeticException
+- ArrayIndexOutOfBoundsException
+- NumberFormatException
+public class Unchecked 
+{
+		public static void main(String[] args) {
+			display();
+		}
+			static void display()
+			{
+			System.out.println("Inside display");
+			try {
+			display();
+			} catch (Exception e) {
+			System.out.println("Handled");
+			}
+		}	
+}
