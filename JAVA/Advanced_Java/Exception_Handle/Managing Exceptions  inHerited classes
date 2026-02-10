@@ -1,0 +1,102 @@
+### Managing Exceptions  inHerited classes
+Some rule are There
+Rule:- 
+1. If Parent class Methods, is throwing an Exception, then Child Class Overrridden method might not throw Exception
+public class Parent {
+	void display() throws Exception
+	{
+		System.out.println("Inside parent disp");
+	}
+}
+public class Child extends Parent {
+	@Override
+	void display()
+	{
+		System.out.println("insside child disp");
+	}
+}
+public class Main {
+	public static void main(String[] args) {
+		Child ch = new Child();
+		ch.display();
+	}
+}
+
+Rule 2:- If Parent class Methods, is throwing an Exception, then Child Class Overrridden method also throw Exception
+public class Parent {
+	void display() throws Exception
+	{
+		System.out.println("Inside parent disp");
+	}
+}
+public class Child extends Parent {
+	@Override
+	void display() throws Exception
+	{
+		System.out.println("insside child disp");
+	}
+}
+public class Main1 {
+	public static void main(String[] args) {
+		Child ch = new Child();
+		try {
+			ch.display();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+Rule 3 - if parent class Method, is not throwing an Exception, then
+child class overridden method also can throw the Exceptioa.
+public class Parent {
+	void display() 
+	{
+		System.out.println("Inside parent disp");
+	}
+}
+public class Child extends Parent {
+	@Override
+	void display() throws Exception //// show an errror-------------------------------
+	{
+		System.out.println("insside child disp");
+	}
+}
+public class Main2 {
+	public static void main(String[] args) {
+		Child ch = new Child();
+		try {
+			ch.display();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+Key Points to Remember
+
+. Checked exceptions have rules
+If the parent method throws a checked exception, the child method must follow the same or stricter rules. It can throw
+the same or more specific, but not broader exceptions.
+. Runtime exceptions are flexible
+Runtime exceptions (like NullPointerException ) can be added or removed freely in the child class.
+. You can remove exceptions safely
+If your child class can handle things internally, you don't have to throw the exception again. But only do this if it's safe
+and makes sense.
+. Be specific, not general
+Prefer using specific exception types. Avoid catching or throwing general Exception unless truly necessary.
+Common Interview Questions & Answers
+
+Q1: Can a child class throw a broader exception than its parent method?
+Answer: No. A child class cannot throw a broader (more general) checked exception. It must throw the same or a more
+specific one.
+
+Q2: What happens if the parent class throws a checked exception, but the child class does not?
+Answer: That's totally fine. The child method can choose not to throw any exception - it just means it's handling the
+issue safely on its own.
+
+Q3: Can runtime exceptions be added or removed in the overridden method?
+Answer: Yes. Runtime exceptions are unchecked and don't need to be declared. You can add or remove them in the child
+class without any compiler errors.
+
+
