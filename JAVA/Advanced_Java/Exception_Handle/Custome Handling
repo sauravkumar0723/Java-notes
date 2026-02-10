@@ -1,0 +1,29 @@
+### Custom Handling
+Syntax
+try {
+    // risky code
+} catch (ExceptionType e) {
+    // custom handling logic
+}
+Key Points to Remember
+. Specific First, Generic Last: Always list your specific exception handlers ( PaymentFailedException,
+DriverlssueException , etc.) before the generic catch (Exception e) .
+. One Match Only: Java stops at the first matching catch block-so order matters.
+. Clear Messages: Each catch block should print a helpful message so you know exactly what went wrong.
+. Safety Net: The generic catch is your final backup for any unexpected errors.
+. Avoid Unreachable Code: Placing the generic catch too early makes specific handlers unreachable-and causes a
+compile error.
+Common Interview Questions & Answers
+
+Q1: Why must a generic catch block come last?
+A: Because catch (Exception e) matches all exceptions. If it appears first, it will catch every error, and the specific
+handlers below it will never run.
+
+Q2: What error do you get if you place a generic catch before a specific one?
+A: A compile-time error: Unreachable catch block for [SpecificException]. It is already handled by the catch block for
+Exception.
+
+Q3: Can a generic catch block ever replace all specific catches?
+A: Technically yes, but it's not best practice. You lose the ability to give tailored handling and clear feedback for different
+error types.
+
