@@ -1,0 +1,81 @@
+### Try with multiple catch block
+- Every type of exception the ways of handling is different.
+- Used when multiple exceptions can occur in a single try block
+- Each catch handles a specific exception
+- Prevents program crash and improves readability
+
+Syntax
+try {
+    // risky code
+} catch (ExceptionType1 e) {
+    // handle exception 1
+} catch (ExceptionType2 e) {
+    // handle exception 2
+}
+
+** Rules:-
+
+- Order matters: child exception first, parent last
+- Only one catch executes for an exception
+- Exception class should be last catch block
+** CODE:-
+
+====> import java.util.Scanner;
+public class Test {
+	public static void main(String[] args) {
+		System.out.println("Connection established");
+		try
+		{
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Enter the value of a:");
+			int a = scan.nextInt();
+			System.out.println("Enter the value of b: ");
+			int b = scan.nextInt();
+			int c = a/b;
+			System.out.println("Div result is :" +c);
+			System.out.println("Enter the size of the Array :");
+			int size = scan.nextInt();
+			int arr[] = new int[size];
+			System.out.println("Enter the elements to be stored in Array :");
+			int element = scan.nextInt();
+			System.out.println("Enter an index at which element to be stored: ");
+			int index = scan.nextInt();
+		} 
+		catch(ArithmeticException e)
+		{
+		System.out.println("please do not enter denominator as Zero");
+		}
+		catch(NegativeArraySizeException e)
+		{
+		System.out.println("Don't enter negative size for Array");
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+		System.out.println("Please access Array within its boundries");
+		}
+		catch(Exception e) {
+		System.out.println("Exception is handled");
+		}
+		System.out.println("Connection is terminated: ");
+	}
+}
+
+OUTPUT:-
+Connection established
+Enter the value of a:
+10
+Enter the value of b: 
+2
+Div result is :5
+Enter the size of the Array :
+4
+Enter the elements to be stored in Array :
+10 20 30 40 50
+Enter an index at which element to be stored: 
+Connection is terminated: 
+--------------------------------***********************-----------------------------------
+Note:- this is genral Exception class
+- you should never ever placed genral exception at begining.
+catch(Exception e) {
+		System.out.println("Exception is handled");
+		}
