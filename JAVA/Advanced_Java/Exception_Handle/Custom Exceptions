@@ -1,0 +1,44 @@
+### Custom Exceptions
+Standard Definition:
+- A custom exception in Java is a user-defined class that extends the Exception class (or RuntimeException ) to represent specific error situations that are not covered by Java's built-in exceptions.
+
+import java.util .*;
+public class DrivingLicense {
+   int age;
+   void takeUserAge()
+    {
+      Scanner scan = new Scanner(System.in);
+      System.out.println("Enter your AGE : ");
+       age = scan.nextInt();
+    }
+
+       void verify() throws UnderAgeException
+       {
+        if(age<18)
+       {
+       UnderAgeException uae = new UnderAgeException();
+       throw uae;
+       }
+       else
+       {
+       System.out.println("Driving license is issued");
+       }
+    }
+}
+public class UnderAgeException extends Exception {
+	UnderAgeException()
+	{
+		super("you are too young---- please wait");
+	}
+}
+public class Main {
+	public static void main(String[] args) {
+		DrivingLicense dl = new DrivingLicense();
+		dl.takeUserAge();
+		try {
+			dl.verify();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
