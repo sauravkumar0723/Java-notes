@@ -1,0 +1,68 @@
+### Introduction to Exception Handle
+Exception Handling:-
+- Exception handling is a programming mechanism that lets you detect, manage, and respond to errors (exceptions) that occur during the execution of a program. 
+- Instead of letting the program crash when something unexpected happens, you "catch" the error, handle it gracefully, and decide how to continue.
+- Graceful termination of the program.
+** Purpose of Exception Handling:-
+   - Graceful termination of the program.
+   try {
+    // read data from file
+    }
+     catch(Exception e) {
+     // use local file & continue to run rest of the program normally.
+
+Exception:- 
+- Is a runtime event or Condition such-as error or Unexpected situation- that occurs during the excution of a program and disrupts its normal flow of program.
+** Purpose of Exception:-
+- it is highly recommanded. if something get wrong we should in a position to handle the situation. highly recommanded the exception
+### Program:- 
+import java.util.Scanner;
+public class Program1 {
+	public static void main(String[] args) {
+		try {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the value of a :");
+			int a  = sc.nextInt();
+			System.out.println("Enter the value of b :");
+			int b = sc.nextInt();
+			int c = a/b;
+			System.out.println("Result is : " + c);
+		} catch (Exception e) {
+			System.out.println("Exception handled");
+		}
+	}
+}
+OUTPUT:-
+Enter the value of a :
+10
+Enter the value of b :
+0
+Exception handled
+
+2. Program :-
+import java.util.Scanner;
+
+public class Program2 {
+	public static void main(String[] args) {
+		System.out.println("Connection established");
+		try {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the value of a :");
+			int a  = sc.nextInt();
+			System.out.println("Enter the value of b :");
+			int b = sc.nextInt();
+			int c = a/b;
+			System.out.println("Result is : " + c);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		System.out.println("Connection get terminated");
+	}
+}
+Connection established
+Enter the value of a :
+10
+Enter the value of b :
+2
+Result is : 5
+Connection get terminated
