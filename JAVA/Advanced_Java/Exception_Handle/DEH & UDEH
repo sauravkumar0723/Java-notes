@@ -1,0 +1,28 @@
+🔹 DEH – Default Exception Handling
+- Provided by the JVM
+- Handles exceptions automatically
+- If exception occurs:
+- JVM prints exception name
+- description
+- stack trace
+- Program terminates abnormally
+- Not user-friendly
+Example:
+int a = 10 / 0;   // JVM handles it
+
+🔹 UDEH – User Defined Exception Handling
+- Handled by the programmer
+- Uses try, catch, finally, throw, throws
+- Prevents abnormal termination
+- Allows custom messages and recovery
+Example:
+ try {
+    int a = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+}
+🔹 Key Difference
+DEH	                                 UDEH
+JVM handles exception	      Programmer handles exception
+Program crashes           	Program continues
+No custom message	          Custom handling possible
