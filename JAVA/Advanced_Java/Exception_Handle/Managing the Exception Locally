@@ -1,0 +1,43 @@
+### Managing the exception locally
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) 
+	{
+		System.out.println("Main method execution started");
+		divide();
+		System.out.println("Main method execution completed");
+   }
+    static void divide() 
+    {
+    	System.out.println("Division started");
+    	try
+    	{
+    	Scanner scan = new Scanner(System.in);
+    	System.out.println("Enter the value of a : ");
+    	int a = scan.nextInt();
+    	System.out.println("Enter the value of b: ");
+    	int b = scan.nextInt();
+    	int c = a/b;
+    	System.out.println(c);
+    	}
+    	catch (Exception e)
+    	{
+    	     System.out.println("Exception handled in divide method");
+    	}
+    	System.out.println("Division is completed");
+    }
+}
+
+O/P :- 
+Main method execution started
+Division started
+Enter the value of a : 
+10
+Enter the value of b: 
+2
+5
+Division is completed
+Main method execution completed
+
+
