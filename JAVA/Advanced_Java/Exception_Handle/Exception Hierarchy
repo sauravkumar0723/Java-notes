@@ -1,0 +1,47 @@
+### Exception Hierarchy
+- Java exception hierarchy starts from Object → Throwable → Error / Exception, where exceptions are divided into checked and unchecked.
+- Throwable class acess root for java Exception Hierarchy.
+- it contains two child class. 1. exception 2 error
+
+Java Exception Hierarchy (Full Diagram)
+Object
+ │
+ └── Throwable
+     │
+     ├── Error
+     │   │
+     │   ├── VirtualMachineError
+     │   │   ├── OutOfMemoryError
+     │   │   └── StackOverflowError
+     │   │
+     │   ├── AssertionError
+     │   └── LinkageError
+     │       └── NoClassDefFoundError
+     │
+     └── Exception
+         │
+         ├── IOException
+         │   ├── FileNotFoundException
+         │   └── EOFException
+         │
+         ├── SQLException
+         │
+         ├── ClassNotFoundException
+         │
+         ├── InterruptedException
+         │
+         └── RuntimeException   (Unchecked)
+             │
+             ├── ArithmeticException
+             ├── NullPointerException
+             ├── ArrayIndexOutOfBoundsException
+             ├── StringIndexOutOfBoundsException
+             ├── NumberFormatException
+             └── ClassCastException
+
+Note:-
+- Throwable → root of all exceptions and errors
+- Error → system/JVM issues (not recoverable)
+- Exception → application-level problems
+- Checked Exceptions → handled at compile time
+- Unchecked Exceptions → runtime errors (RuntimeException)
