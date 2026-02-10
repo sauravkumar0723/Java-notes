@@ -1,0 +1,9 @@
+### Throws & Throws
+Key Points to Remember
+
+. throw is used to actually send an exception when something goes wrong during execution.
+. throws is used to declare that a method might throw an exception - it warns the caller.
+. throw goes inside the method body; throws goes in the method declaration.
+. You can only throw one exception at a time, but you can throws multiple exceptions.
+. throw happens during runtime, while throws is checked at compile-time.
+. Both are used for exception handling, but they play very different roles.
