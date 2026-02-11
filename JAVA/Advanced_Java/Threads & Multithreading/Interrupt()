@@ -1,0 +1,33 @@
+### Interrupt()
+- In Java, the interrupt() method is used to send a request to a thread asking it to stop what it's doing, especially if the thread is sleeping, waiting, or doing a long-running task.
+public class Test extends Thread 
+{
+	public void run() 
+	{
+		try 
+		{
+			for(int i=1;i <= 5;i++)
+			{
+				System.out.println("t1 thread running");
+				Thread.sleep(3000); // waiting
+		    }
+		}	
+			catch(InterruptedException i) 
+			{
+		    	System.out.println("t1 thread terminated ..! ");
+		    }		
+	}
+}
+
+import com.learnCoding.ThreadSchedular.Test;
+
+public class Main {
+	public static void main(String[] args) {
+		Test d = new Test();
+		d.start();
+		d.interrupt();
+	}
+}
+OUTPUT:-
+t1 thread running
+t1 thread terminated ..! 
