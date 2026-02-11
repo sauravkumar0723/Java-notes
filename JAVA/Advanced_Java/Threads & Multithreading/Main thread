@@ -1,0 +1,16 @@
+1. What is the main thread in Java?
+
+Answer:
+The main thread is the first thread that runs when a Java program starts. It executes the main() method and controls the
+overall flow unless other threads are created.
+
+2. Why is the main thread important in Java?
+
+Answer:
+Because it's the entry point of any Java application. Without the main thread, the program won't begin. It manages the
+initial setup and can coordinate other threads if needed.
+
+3. What is the default priority of the main thread?
+
+Answer:
+The main thread's default priority is NORM_PRIORITY, which equals 5 on a scale from 1 (lowest) to 10 (highest).
