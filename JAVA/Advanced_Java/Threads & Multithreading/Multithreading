@@ -1,0 +1,18 @@
+What is Multithreading?
+- Multithreading is a feature in Java that allows a program to run two or more parts of code (called threads) at the same time.
+- MultiThreading is a Process of cratinf multiple threads to excute independet activities where independent are present at the inside the task. this concept is ony called multithreading.
+
+** Thread :- line of control is called as thread --------------means line of excution.
+
+** Single Thread Programming:- inside the task only one thread is there this concept is callid single thread program.
+** MultiThread Programmming:- that allows a program to run two aur more parts of code callled threads at same time.
+- multiple activity inside the same task. all the activities are independent to each other.
+- 
+
+
+JVM will create the thread.
+Every main methods stack is created
+
+How to create thread in Java?
+1. By extending Thread class
+2. By implementing Runnable Interface.
