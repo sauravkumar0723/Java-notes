@@ -1,0 +1,108 @@
+### single-threaded and multi-threaded
+import java.util.Scanner;
+public class SingleThread {
+		public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter a number to print :");
+		int n = scan.nextInt();
+		System.out.println("Entered number is " +n);
+		System.out.println("Enter the first number :");
+		int a = scan.nextInt();
+		System.out.println("Enter the second number :");
+		int b = scan.nextInt();
+		int res = a+b;
+		System.out.println("Addidtion result is " + res);
+		}
+}
+a number to print :
+5
+Entered number is 5
+Enter the first number :
+2
+Enter the second number :
+3
+Addidtion result is 5
+
+
+2. multi-threaded program
+code:- public class Printing extends Thread
+{
+	@Override
+	public void run() 
+	{
+		System.out.println("Printing Activity started");
+		for(int i = 1; i <=5; i++)
+		{
+			System.out.println("KodNest");
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println("Printing activity completed");
+	}
+}
+
+import java.util.Scanner;
+
+public class Addition extends Thread
+{
+	@Override
+	public void run()
+	{
+		System.out.println("Addition activity started");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the first number : ");
+		int a = sc.nextInt();
+		System.out.println("Enter the second number : ");
+		int b = sc.nextInt();
+		int c = a+b;
+		System.out.println("Addition result is : " + c);
+		
+		System.out.println("Addition Acvtivity is completed");
+	}
+}
+
+// main method
+public class Main {
+	public static void main(String[] args) {
+		Printing p = new Printing();
+		Addition a = new Addition();
+		p.start();
+		a.start();
+	}
+}
+// Output:-
+Printing Activity started
+KodNest
+Addition activity started
+Enter the first number : 
+KodNest
+10
+Enter the second number : 
+KodNest
+20
+Addition result is : 30
+Addition Acvtivity is completed
+KodNest
+KodNest
+Printing activity completed
+
+
+#### important interview question:-
+
+Q1. What is the difference between single-threaded and multi-threaded programs?
+A:
+Single-threaded programs run one task at a time using only the main thread.
+Multi-threaded programs use multiple threads to run different tasks at the same time within the same application.
+
+Q2. When would you prefer using a single-threaded program?
+A:
+When the application is small, doesn't need to multitask, or must run in a specific order - like calculators, simple
+notepads, or step-by-step data processing.
+
+Q3. Why is multi-threading useful in real-world applications?
+A:
+It makes programs faster and more responsive. For example, a music app plays songs, shows lyrics, and loads the next
+track at the same time without freezing - thanks to multithreading.
