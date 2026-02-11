@@ -1,0 +1,30 @@
+### Runnable Interface
+-- The Runnable interface is a functional interface in Java used to create threads by defining the code to be executed in a separate thread. It contains only one method: run() .
+
+Steps to Use the Runnable Interface
+1. Create a Class that Implements Runnable : This is like joining a Kodnest course. At the same time, you can still access features like practice challenges, Al-based questions, and chat with mentors.
+2. Override the run() Method: This method is where you define the task your thread will do. It's like taking on a specific Kodnest challenge-this is the job your thread will do in the background.
+3. Create an Instance of the Runnable Class and Pass it to a Thread : You create an instance of the Runnable class, pass it to a Thread object, and call start() . This is like opening multiple tabs in the Kodnest app-one for learning, one for chatting with BroKod, and another for practicing.
+
+// code
+public class Printing implements Runnable {
+	@Override
+	public void run()
+	{
+		for (int i = 1; i <= 5; i++)
+		{
+			System.out.println("My Child Thread");
+		}
+	}
+}
+public class Main {
+	public static void main(String[] args) {
+		Printing p = new Printing();
+		Thread t = new Thread(p);
+		t.start();
+		for (int i = 1; i <= 5; i++)
+		{
+			System.out.println("Main Thread");
+		}
+	}
+}
