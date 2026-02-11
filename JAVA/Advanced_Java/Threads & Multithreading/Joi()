@@ -1,0 +1,116 @@
+### JION()
+- The join() method in Java is used when you want one thread (usually the main thread) to wait for another thread to finish its work.
+
+import java.util.Scanner;
+public class Addition implements Runnable 
+{
+	@Override
+    public void run() {
+		System.out.println("Addition activity started using file ");
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the 1st number :");
+		int a = scan.nextInt();
+		System.out.println("Enter the 2nd number : ");
+		int b = scan.nextInt();
+		int res = a+b;
+		System.out.println("Result is " + res);
+
+		System.out.println("Addition activity completed started using the file");
+
+		}
+	}
+public class PrintNum implements Runnable
+{
+	@Override
+	public void run() 
+	{
+		System.out.println("Print Num activity started started using the file");
+		for(int i=1; i <= 5; i++)
+		{
+		    System.out.println("KodNest");
+		    try 
+		    {
+		       Thread.sleep(3000);
+		    }
+		       catch (InterruptedException e) 
+		    {
+		            e.printStackTrace();
+		            System.out.println("Print Num activity completed started using the file");
+		    }
+	    }
+	}
+}
+
+public class PrintChar implements Runnable {
+	@Override
+	public void run()
+	{
+		System.out.println("Print char activity started");
+		for(char ch = 'A'; ch <= 'I' ; ch++)
+		System.out.println(ch);
+		try {
+		Thread.sleep(3000);
+		} catch (InterruptedException e) {
+		e.printStackTrace();
+		}
+		System.out.println("Print char activity completed");
+	}
+}
+
+import com.kod.MultiThreas.Addition;
+import com.kod.MultiThreas.PrintChar;
+import com.kod.MultiThreas.PrintNum;
+
+public class Main {
+	public static void main(String[] args) 
+	{
+		System.out.println("Main thread excution started and opened file");
+        PrintNum pn = new PrintNum();
+        Addition ad = new Addition();
+        PrintChar pc = new PrintChar();
+        
+        Thread t1 = new Thread(pn);
+        Thread t2 = new Thread(ad);
+        Thread t3 = new Thread(pc);
+        t1.start();
+        t2.start();
+        t3.start();
+        
+        try {
+			t1.join();
+			t2.join();
+			t3.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
+        System.out.println("Main thread execution completed and local file");
+	}
+}
+
+
+output:-
+Main thread excution started and opened file
+Print Num activity started
+KodNest
+Addition activity started
+Print char activity started
+A
+B
+C
+D
+E
+F
+G
+H
+I
+Enter the 1st number :
+KodNest
+Print char activity completed
+10
+Enter the 2nd number : 
+20KodNest
+Result is 30
+Addition activity completed
+KodNest
+KodNest
+Main thread execution completed and local file
