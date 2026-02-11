@@ -1,0 +1,28 @@
+### Race Condition
+Simple Definition:- 
+- A race condition is a problem that occurs in multi-threaded programs when multiple threads try to read and write shared data at the same time, and the final result depends on the timing of those threads.
+public class RaceCondition {
+		static int count = 10;
+		public static void main(String[] args) throws InterruptedException {
+		Thread t1 = new Thread() {
+		@Override
+		public void run()
+		{
+		count = count-1;
+		}
+		};
+		Thread t2 = new Thread() {
+			public void run()
+			{
+			count = count-1;
+			}
+		};
+			t1.start();
+			t2.start();
+
+			t1.join();
+			t2.join();
+
+			System.out.println("Final count " + count);
+		}
+}
