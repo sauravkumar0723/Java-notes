@@ -1,0 +1,57 @@
+### Understanding Threads and Their Usage
+
+*  What is a Thread?
+- A thread is the smallest unit of execution in a program. It's like a mini worker that runs a specific part of your code independently.
+
+Key Points to Remember - Process vs. Thread
+
+1. Processes are like full apps.
+- Each process runs independently, like Swiggy, Paytm, or Netflix.
+2. Threads are mini-tasks inside an app.
+- In Netflix, one thread plays the video, another loads subtitles, and another buffers the next episode.
+3. Processes use more memory.
+- Each process has its own memory and resources - heavier and slower.
+4. Threads are memory-friendly.
+- Threads inside the same program share memory, making them lightweight and fast.
+5. Communication is easier with threads.
+- Since threads share memory, they can work together more smoothly than processes.
+6. Use threads for speed and smooth UI.
+- Threads help apps stay responsive and do background work without freezing.
+
+public class Main {
+	public static void main(String[] args) {
+		Thread t = Thread.currentThread();
+		System.out.println(t);
+	}
+}
+OUTPUT:_
+Thread[#1,main,5,main]
+
+public class Main {
+	public static void main(String[] args) {
+		Thread t = Thread.currentThread();
+		System.out.println(t);
+		t.setName("Ajay");
+		System.out.println(t);
+		t.setPriority(7);
+		System.out.println(t);
+		t.setPriority(Thread.MAX_PRIORITY);
+		System.out.println(t);
+		t.setPriority(Thread.MIN_PRIORITY);
+		System.out.println(t);
+		System.out.println(t.getName());
+		System.out.println(t.getPriority());
+		System.out.println(t.getClass());
+	}
+}
+
+OUTPUT:- 
+Thread[#1,main,5,main]
+Thread[#1,Ajay,5,main]
+Thread[#1,Ajay,7,main]
+Thread[#1,Ajay,10,main]
+Thread[#1,Ajay,1,main]
+Ajay
+1
+class java.lang.Thread
+
