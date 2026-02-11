@@ -1,0 +1,22 @@
+### Multitasking
+- Multitasking is the ability of a system or person to perform more than one task at the same time or by quickly switching between tasks.
+Example:- While a video is playing, it should load the next one in the background.
+1. single tasking Operating System:- each task at one completed then it is single task program
+2. Multiplte tasking Opearating System:- The process of excution multiple task at once is known as multiple tasking.
+
+
+Q1: What is multitasking in Java?
+A: Multitasking in Java means performing multiple operations at the same time. This helps in improving performance and
+user experience by making apps faster and more responsive.
+
+Q2: Can Java perform multiple tasks at once?
+A: Yes. Java supports multitasking through threads, but even without using threads, you can run multiple programs at
+once to simulate multitasking.
+
+Q3: What are real-life examples of multitasking in computers?
+A: Playing music while typing, downloading files while browsing, or attending a Zoom call while taking notes - all are
+examples of multitasking.
+
+Q4: Why is multitasking important in modern apps?
+A: Because users expect smooth and fast apps. Multitasking helps avoid freezing or delays by letting the app handle
+many tasks at once.
