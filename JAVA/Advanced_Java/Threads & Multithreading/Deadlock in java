@@ -1,0 +1,4 @@
+## DeadLock
+- What Is a Deadlock?
+Standard Definition:-
+A deadlock is a situation in multithreaded programming where two or more threads are permanently blocked, each waiting for the other to release a resource, and none of them can proceed.
