@@ -1,0 +1,64 @@
+### File Handling & Input output managment
+
+## File handling:- 
+
+-File handling is the way a program interacts with files on your computer. It involves creating, reading, writing, updating, and deleting files.
+Key Points to Remember
+
+. File Handling allows a program to store, read, write, and update data permanently.
+. Data stored in variables is lost when the program ends; files keep it safe.
+. There are two main types of file handling in Java:
+. Byte-Based Streams - for binary data (images, PDFs, audio)
+. Character-Based Streams - for text data (logs, notes, CSV)
+· Use classes like:
+. FilelnputStream, FileOutputStream (for byte-based)
+. FileReader, FileWriter (for character-based)
+. Always use loops to read/write and close the file when done.
+. Use try-catch blocks to handle errors.
+. Prefer try-with-resources to automatically close files.
+
+*************************FileInputStream & FileOutputStream code *****************************************
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Demo {
+	public static void main(String[] args) throws IOException {
+		
+		String path1 = "C:\\Users\\Saurav Kumar\\OneDrive\\Documents\\JAVA\\FileHandling\\input.txt";
+		String path2 = "C:\\Users\\Saurav Kumar\\OneDrive\\Documents\\JAVA\\FileHandling\\output.txt";
+		
+		FileInputStream fis= new FileInputStream(path1);
+		FileOutputStream fos = new FileOutputStream(path2);
+		
+		int data;
+		while((data = fis.read())!= -1)
+		{
+			fos.write(data);
+		}
+		System.out.println("HAppy No Bp");
+		fis.close();
+		fos.close();
+	}
+}
+
+
+
+
+
+-----------------What Exactly Are Java I/O Streams?
+Standard Definition:
+Java I/O Streams (Input/Output Streams) are used to read data from a source (like a file, keyboard, or network) and write data to a destination (like a file, screen, or socket) - one piece at a time.
+
+What Are Buffered Streams?
+
+- Buffered streams add a temporary memory buffer between your program and the file system. This makes file reading and writing much faster - especially when working with large files or repeated reads/writes.
+- Instead of reading or writing one character or byte at a time, buffered streams collect a chunk of data in memory first, then process it together.
+When Should You Use Buffered Streams?
+Use buffered streams when:
+. You're reading a big text file (like interview questions or logs)
+. You're writing a lot of data at once
+. You want to speed things up and reduce file I/O operations
+
+
