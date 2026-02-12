@@ -1,0 +1,230 @@
+MulthiThreading Problem overcome with Synchronization
+-  Synchronization
+
+- Synchronization in Java is the process of controlling the access of multiple threads to shared resources. 
+- It ensures that only one thread can access the critical section of code at a time, thus preventing data inconsistency and race conditions.
+
+// MultiThreading Problem
+- public class Car implements Runnable
+{
+	int available = 1, passenger;
+	Car(int passenger)
+	{
+		this.passenger = passenger; // passenger= 1
+	}
+//	@Override
+	public  void run()
+	{
+		String name = Thread.currentThread().getName();
+		if(available >= passenger) // 1>=1
+		{
+			System.out.println(name+" Reversed Seat...!");
+			available=available-passenger;
+		} else {
+			System.out.println("seat not available soory");
+		}
+	}
+}
+
+public class Customer {
+	public static void main(String[] args) {
+		Car r = new Car(1);
+		Thread t1 = new Thread(r);
+		Thread t2 = new Thread(r);
+		Thread t3 = new Thread(r);
+		t1.setName("Ram");
+		t2.setName("Shyam");
+		t3.setName("Raju");
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}
+
+// Output:- 
+Raju Reversed Seat...!
+Shyam Reversed Seat...!
+Ram Reversed Seat...!
+---------------------------------------------------------***********************________________________________________________________
+------------------------- to overcome this proble we can use synchronization keyword--------------------------------------------------------
+// CODE
+
+- public class Car implements Runnable
+{
+	int available = 1, passenger;
+	Car(int passenger)
+	{
+		this.passenger = passenger; // passenger= 1
+	}
+//	@Override
+	public  void run()
+	{
+		String name = Thread.currentThread().getName();
+		if(available >= passenger) // 1>=1
+		{
+			System.out.println(name+" Reversed Seat...!");
+			available=available-passenger;
+		} else {
+			System.out.println("seat not available soory");
+		}
+	}
+}
+
+public class Customer {
+	public static void main(String[] args) {
+		Car r = new Car(1);
+		Thread t1 = new Thread(r);
+		Thread t2 = new Thread(r);
+		Thread t3 = new Thread(r);
+		t1.setName("Ram");
+		t2.setName("Shyam");
+		t3.setName("Raju");
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}
+//------Output--------------
+Ram Reversed Seat...!
+seat not available soory
+seat not available soory
+
+
+
+
+-------------------------------------------Threre are two types of Synchronization------------------------------------------
+1. Synchronized Methods
+Idea: Only one thread is allowed to use the entire method at a time. Others have to wait.
+
+Real-Life Example:
+
+You and your friends are writing a group assignment in one shared Google Doc. To avoid confusion, you all agree that
+only one person will edit at a time while others wait
+
+Java Code:
+ class Test {
+	public synchronized void PrintTable(int n)
+	{
+		for (int i = 1; i <= 10; i++)
+		{
+			System.out.println(n * i);
+		}
+	}
+}
+
+class thread1 extends Thread
+{
+	Test t; // refernce banaye hai
+	thread1(Test t)
+	{
+		this.t= t;	
+	} 
+	public void run()
+	{
+		t.PrintTable(5);
+	}
+}
+class thread2 extends Thread
+{
+	Test t; // refernce banaye hai
+	thread2(Test t)
+	{
+		this.t= t;
+	} 
+	public void run()
+	{
+		t.PrintTable(7);
+	}
+}
+class Main
+{
+	public static void main(String[] args) {
+		Test obj = new Test();
+		thread1 t1 = new thread1(obj);
+		thread2 t2 = new thread2(obj);
+		t1.start();
+		t2.start();
+	}
+}
+
+Output:-
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+7
+14
+21
+28
+35
+42
+49
+56
+63
+70
+-----------------------------------------------********************____________________________
+2. Synchronized Blocks
+
+Idea: Instead of locking the whole method, you can lock only a small part of the code - the one that really needs protection.
+
+Real-Life Example:
+
+Let's say students are posting announcements on a college notice board. Only one student can write at a time. But others can read the board or do other things while someone writes.
+
+Java Code:
+class msg
+{
+	public void show(String name)
+	{                                  // Home
+		;;;;;; // 100 LOC
+		synchronized(this)
+		{
+			for(int i=1;i <= 3;i++)
+			{
+				System.out.println("How are U "+name);
+			}
+		}
+		;;;;;; // 100 LOC
+		
+	}
+	
+}
+
+class OurThread extends Thread
+{
+	msg m;
+	String name;
+	OurThread(msg m, String name)
+	{
+		this.m=m;
+		this.name=name;
+	}
+	public void run()
+	{
+		m.show(name);
+	}
+}
+
+class SynBlock
+{
+	public static void main(String[] args) 
+	{
+		msg  m = new msg(); // m has a lock
+		OurThread t1=new OurThread(m,"akhilesh");
+		OurThread t2=new OurThread(m,"ankush");
+
+		t2. start();
+	}	
+}
+O/p:-
+
+How are U ankush
+How are U ankush
+How are U ankush
+
