@@ -9,6 +9,21 @@ wrong.
 . Show clear and friendly messages to the user when an error occurs.
 
 
+
+
+
+Key Points to Remember
+
+. BufferedReader and BufferedWriter are used to read/write text efficiently in Java.
+. They are built on top of FileReader/FileWriter, providing buffering to improve performance.
+. BufferedReader reads one line at a time using .readLine() .
+. BufferedWriter writes text using .write() and moves to the next line using .newLine() .
+. Using a buffer means Java doesn't access the file system every time-it works with chunks of data in memory.
+. Try-with-resources automatically handles closing and flushing streams safely.
+. flush() is used to manually push any remaining buffered data to the file before closing.
+. Buffered streams are best for working with large text files or when reading/writing many lines.
+Common Interview Questions and Answers
+
 # BufferReader & BufferWriter
 
 
