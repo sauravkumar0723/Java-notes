@@ -1,0 +1,24 @@
+Annotations:- 
+Standard Definition:
+ - A Java annotation is a label you stick on your code-on a class, method, or variable-that doesn't change how the code runs. 
+- Instead, it gives extra information that tools or libraries can read to do things automatically, like running tests, checking for mistakes, or linking code to a database.
+
+
+------------------------------Purpose of Annotations----------------------------------
+Annotations serve various purposes, including:
+
+1. Configuration: Instead of using external configuration files, annotations can define configurations directly in the code, making it more readable and organized.
+2. Compiler Instructions: Annotations can instruct the compiler to perform specific checks or optimizations. For example, the @Override annotation ensures that a method overrides a method in its superclass.
+3. Documentation: Some annotations provide documentation hints, making code easier to understand for developers and tools alike.
+
+How Annotations Word:
+
+1. You Add a Label: Place the annotation above the thing you want to mark-whether it's a whole class or just one method.
+2. You Choose Its Lifespan: Some annotations disappear after compilation, others live on in the compiled files, and some stay available at runtime for tools to read.
+3. Tools or Frameworks Read Them: At compile time or when your program starts, frameworks scan for annotations they recognize and automatically perform tasks-like setting up routes in a web app or running tests.
+Common Java Annotations
+
+. Override Labels: Marks a method as replacing one from its superclass, helping the compiler catch errors.
+. Deprecated Warnings: Flags a class or method as outdated so future developers know not to rely on it.
+. Suppress-Warning Notes: Tells the compiler to ignore specific warnings in a section of code.
+Key Benefits of Using Annotations
