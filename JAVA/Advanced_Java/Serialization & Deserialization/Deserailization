@@ -19,6 +19,16 @@ To deserialize an object:
 . An ObjectInputStream can be used to read the byte stream and convert it back to the original object.
 
 
+
+
+
+What Is the Serializable Interface?
+
+Standard Definition:
+The Serializable interface in Java is a marker interface found in the java.io package. 
+It is used to tell the Java Virtual Machine (JVM) that objects of a class can be converted into a stream of bytes so they can be saved toa file or sent over a network.
+
+
 // class student objects of serialization program
 import java.io.Serializable;
 import java.util.Objects;
