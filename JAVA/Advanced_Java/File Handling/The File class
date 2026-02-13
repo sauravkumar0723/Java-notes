@@ -1,0 +1,72 @@
+#### File Class
+
+Standard Definition
+
+The File class in Java (from java.io package) represents a file or directory (folder) in your computer system. It
+provides methods to create, delete, rename, check existence, get size, and more - but it doesn't deal with the
+content inside the file.
+
+package com.FileHamdling.BufferReader_Writer;
+
+import java.io.File;
+
+public class Demo1 {
+	public static void main(String[] args) {
+		String path1 = "C:\\Users\\Saurav Kumar\\OneDrive\\Documents\\JAVA\\FileHandling\\input.txt";
+		File file = new File(path1);
+		System.out.println(file.canRead());
+		System.out.println(file.canWrite());
+		System.out.println(file.canExecute());
+		System.out.println(file.getAbsolutePath());
+		System.out.println(file.isFile());
+		System.out.println(file.isDirectory());
+	}
+}
+
+package com.FileHamdling.BufferReader_Writer;
+
+import java.io.File;
+
+public class Demo1 {
+	public static void main(String[] args) {
+		String path1 = "C:\\Users\\Saurav Kumar\\OneDrive\\Documents\\JAVA\\FileHandling\\input.txt";
+		File file = new File(path1);
+		System.out.println(file.canRead());
+		System.out.println(file.canWrite());
+		System.out.println(file.canExecute());
+		System.out.println(file.getAbsolutePath());
+		System.out.println(file.isFile());
+		System.out.println(file.isDirectory());
+	}
+}
+
+
+
+package com.FileHamdling.BufferReader_Writer;
+
+import java.io.File;
+
+public class Demo1 {
+	public static void main(String[] args) {
+		String path1 = "C:\\Users\\Saurav Kumar\\OneDrive\\Documents\\JAVA\\FileHandling\\input.txt";
+		File file = new File(path1);
+		System.out.println(file.canRead());
+		System.out.println(file.canWrite());
+		System.out.println(file.canExecute());
+		System.out.println(file.getAbsolutePath());
+		System.out.println(file.isFile());
+		System.out.println(file.isDirectory());
+	}
+}
+
+
+
+true
+true
+true
+C:\Users\Saurav Kumar\OneDrive\Documents\JAVA\FileHandling\input.txt
+true
+false
+
+
+
