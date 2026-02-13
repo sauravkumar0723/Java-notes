@@ -1,0 +1,102 @@
+### Serialization
+
+Interviewer: What is the primary purpose of serialization in Java?
+
+Ideal Answer: The primary purpose of serialization in Java is to convert an object into a byte stream, so that it can be easily saved to a file, sent over a network, or stored in a database. 
+This process allows the object's state to be preserved and later reconstructed through deserialization.
+
+
+
+
+
+
+
+package Com.kodNest.Serialization;
+
+import java.io.Serializable;
+import java.util.Objects;
+// pojo class - we create the class using source code on eclipse only Student class.
+public class Student implements Serializable{
+	int id;
+	String name;
+	int age;
+	int marks;
+	public Student() {
+		super();
+	}
+	public Student(int id, String name, int age, int marks) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.marks = marks;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getMarks() {
+		return marks;
+	}
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", marks=" + marks + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, id, marks, name);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		return age == other.age && id == other.id && marks == other.marks && Objects.equals(name, other.name);
+	}
+		
+}
+
+
+
+/// main classs /////
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class StudentAppli {
+	public static void main(String[] args) throws IOException {
+		Student student = new Student(12, "Raja", 20, 99);
+		
+		String path = "C:\\Users\\Saurav Kumar\\OneDrive\\Documents\\Serialization\\Student.txt";
+		
+		FileOutputStream fos = new FileOutputStream(path);
+		
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		
+		oos.writeObject(student);
+		System.out.println("DONE");
+		oos.close();
+		fos.close();	
+	}
+}
