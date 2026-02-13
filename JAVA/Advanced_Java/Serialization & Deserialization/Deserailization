@@ -1,0 +1,129 @@
+### Deserialization
+
+-- Deserialization in Java is the process of converting a stream of bytes back into a Java object. 
+-- This is used to restore the original object that was previously saved using serialization.
+
+
+What Is the Purpose of Deserialization?
+
+Deserialization is helpful when you want to:
+
+. Load saved data like user info or game progress
+. Reuse stored objects without creating them again
+. Read objects that were sent from another system or saved earlier
+How Deserialization Works
+
+To deserialize an object:
+
+. The class must implement Serializable .
+. An ObjectInputStream can be used to read the byte stream and convert it back to the original object.
+
+
+// class student objects of serialization program
+import java.io.Serializable;
+import java.util.Objects;
+// pojo class
+public class Student implements Serializable{
+	int id;
+	String name;
+	int age;
+	int marks;
+	public Student() {
+		super();
+	}
+	public Student(int id, String name, int age, int marks) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.marks = marks;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getMarks() {
+		return marks;
+	}
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", marks=" + marks + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, id, marks, name);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		return age == other.age && id == other.id && marks == other.marks && Objects.equals(name, other.name);
+	}
+		
+}
+
+
+/// Main method of Serialization Program for Creating objects using output stream
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class StudentAppli {
+	public static void main(String[] args) throws IOException {
+		Student student = new Student(12, "Raja", 20, 99);
+		
+		String path = "C:\\Users\\Saurav Kumar\\OneDrive\\Documents\\Serialization\\Student.txt";
+		
+		FileOutputStream fos = new FileOutputStream(path);
+		
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		
+		oos.writeObject(student);
+		System.out.println("DONE");
+		oos.close();
+		fos.close();	
+	}
+}
+
+/// read the serialization  Objects  and convert int byte in which file of deserialization 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+public class DeSerialization 
+{
+		public static void main(String[] args) throws IOException, ClassNotFoundException {
+			String path = "C:\\Users\\Saurav Kumar\\OneDrive\\Documents\\Serialization\\Student.txt";
+			
+			FileInputStream fis = new FileInputStream(path);
+			
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			Student student = (Student)ois.readObject();
+			System.out.println(student);
+		}
+}
+
+
+// Student [id=12, name=Raja, age=20, marks=99]
