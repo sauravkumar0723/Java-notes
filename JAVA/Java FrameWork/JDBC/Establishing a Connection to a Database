@@ -1,0 +1,71 @@
+#### Establishing a Connection to a Database
+
+Key Points to Remember
+
+. A database connection is like building a bridge between your Java app and the place where data is stored.
+. JDBC (Java Database Connectivity) helps Java talk to databases like MySQL, Oracle, etc.
+. Loading the driver is the first step-it tells Java how to communicate with your chosen database.
+. Use DriverManager.getConnection() to establish the connection with the database using its URL, username, and
+password.
+. Always close the connection after use to free up resources and avoid memory leaks.
+. Each step-load driver, connect, send query, process results, and close-must be done in sequence for smooth
+communication.
+. Forgetting to close connections and wrong database URLs are common beginner mistakes.
+
+
+=========================Steps to Connect Java to a Database (The JDBC Way)===============
+
+================ Let's break this process into easy steps:
+
+Step 1: Load the JDBC Driver
+
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class Demo1 {
+	public static void main(String[] args) {
+		try {
+			//step 1:- load the driver 
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("Driver Loaded");
+			
+			//step 2:- Establish the connection
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kodnestaug", "root", "Saurav@123");
+			System.out.println("Connection establish");
+			
+			// Step 3:- create statement
+			Statement statment = con.createStatement();
+			System.out.println("Statment created");
+			
+			// Step4:- Execute Query
+			String sql = "select * from student";
+			ResultSet rs = statment.executeQuery(sql);
+			System.out.println("Query executed");
+			
+			//Step5 Display the result        
+            while(rs.next()) {
+            	System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3));
+            }     
+            //step 6 close() the connection
+            con.close();
+            statment.close();
+            rs.close(); 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+Output:-
+Driver Loaded
+Connection establish
+Statment created
+Query executed
+1 saurav 23
+2 gaurav 24
+3 nitish 26
+4 ankit 37
