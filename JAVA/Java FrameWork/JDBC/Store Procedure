@@ -1,0 +1,79 @@
+#### Store Procedure
+
+--- A Stored Procedure is a precompiled group of SQL statements stored in the database that can be executed as a single unit.
+What is CallableStatement?
+
+-- A CallableStatement is part of the JDBC API that allows Java applications to call stored procedures stored in a database.
+
+Explanation of the Code
+
+1. Establish a Connection: First, we connect to the database using DriverManager.getConnection() .
+2. Prepare the CallableStatement: We use prepareCall() to prepare a statement that calls the stored procedure
+named CheckProductAvailability .
+3. Set the Parameter: We set the parameter to "Apples" using setString() .
+4. Execute the Stored Procedure: We call execute() to run the stored procedure and check if it returns results.
+5. Clean Up: Finally, we close the CallableStatement and the Connection to release resources.
+Key Points to Remember
+
+. Stored Procedure: Precompiled SQL logic saved in the database; acts like a ready-made recipe
+. CallableStatement: Java's tool to call stored procedures; works like a remote control
+. Benefits: Faster performance, reusable code, better security, and easy maintenance.
+· Syntax:
+
+CallableStatement cs = connection.prepareCall("{call procedure_name(?)}");
+--- 
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+public class StoreProcedure {
+	public static void main(String[] args) {
+		Connection con = null;
+		CallableStatement cs = null;
+		ResultSet rs = null;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		String dpath = "com.mysql.cj.jdbc.Driver";
+		String url = "jdbc:mysql://localhost:3306/storeprocedure?user = root & password = Saurav@123";
+		
+		String sql = "call getstudent(?)";
+		
+		try {
+			Class.forName(dpath);
+			con = DriverManager.getConnection(url);
+			
+			cs = con.prepareCall(sql);
+			
+			System.out.println("Enter the marks to fetch the students marks above enterd marks");
+			int marks = scan.nextInt();
+			cs.setInt(1, marks);
+			boolean res = cs.execute();
+			
+			if(res == true) {
+				rs = cs.getResultSet();
+				while(rs.next())
+				{
+					System.out.println(rs.getInt(1) + " "+ rs.getString(2) + " " + rs.getInt(3));
+					
+				}
+			}
+			else {
+				int nora = cs.getUpdateCount();
+				System.out.println(nora + "ROW(S) affected");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
+
+
+Enter the marks to fetch the students marks above enterd marks
+90
+12 balu 92
+13 raj 97
