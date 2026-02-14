@@ -1,0 +1,37 @@
+#### JDBC
+- Java Database Connectivity (JDBC) is an API (Application Programming Interface) provided by Java that enables Java applications to interact with a wide range of databases using SQL queries. 
+- It allows Java programs to establish a connection with a database, send SQL statements, and process the results returned by the database.
+
+**********************Key Points to Remember*********************
+
+. JDBC stands for Java Database Connectivity.
+. It acts as a bridge between Java programs and databases.
+. With JDBC, you can perform CRUD operations: Create, Read, Update, and Delete data.
+. JDBC works with many databases like MySQL, Oracle, PostgreSQL, and SQLite.
+. It's part of Java, so you don't need extra tools or software to use it.
+. JDBC allows real-time data handling, meaning your app can work with live data while running.
+. It is easy for beginners to learn and use.
+
+****** What is a JDBC Driver?
+- A JDBC Driver is software that enables a Java application to connect to a database and exchange data. 
+- It acts as a middleman that translates Java's instructions into commands the database understands and converts the database's responses back into a format Java can work with.
+
+Type 1 – JDBC-ODBC Bridge Driver
+
+This driver uses the ODBC (Open Database Connectivity) driver to connect to the database.
+It translates JDBC calls into ODBC calls. It is slow and platform dependent. Removed after Java 8, so it is no longer recommended.
+
+Type 2 – Native API Driver
+
+This driver uses the database’s native client libraries to communicate with the database. 
+It is faster than Type 1 but platform dependent because native libraries must be installed on the client machine.
+
+Type 3 – Network Protocol Driver
+
+This driver communicates with a middleware server, which then connects to the database. 
+It is platform independent but requires additional network infrastructure. It is less commonly used today.
+
+Type 4 – Thin Driver
+
+This is a pure Java driver that directly connects to the database using database-specific protocols. 
+It is platform independent, fast, and does not require any native libraries. This is the most commonly used JDBC driver in modern applications.
