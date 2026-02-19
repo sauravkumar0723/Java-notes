@@ -1,0 +1,29 @@
+### Abstraction
+--> ABSTRACTIOn in java is the concept of hiding the internal details of a system and showing only the essential features.
+--> it allow you to simplify complex system by focusing only on what is important, without worrying about how thing swork behind the scenes.
+
+Why is Abstraction Important?
+
+1. Simplifies Complexity:
+Abstraction helps you focus on important parts, hiding the complicated details. It's like using an app without needing to know how it works.
+2. Hides Unnecessary Details:
+Just like driving a car without knowing how the engine works, abstraction hides the complexity and shows only what's necessary.
+3. Reusability:
+It allows you to create general templates that can be used in different places, saving time and effort.
+4. Easy Updates:
+Abstraction makes it easy to update parts of the system without breaking other parts. It's like updating an app on your phone without affecting how you use it.
+Q Real-World Applications of Abstraction
+
+1. Smartphone Apps: Using apps like Instagram, you don't need to know how they work; you just enjoy posting or messaging.
+2. Video Games: You play the game without worrying about how graphics or the game engine work.
+
+Note:-> if you have incomplete method then i will make you as abstract.
+2. -> Complete method means you should give the body
+
+if the class is containig , not2m if the class is containing 1abstract method, immediately you make that class as abstract.
+
+note :- abstract void disp1() -> these method are technically called abstract method. also called incomplete method
+--> void display()
+{
+// complete method because we have give the body. these method are called concrete method.
+}
