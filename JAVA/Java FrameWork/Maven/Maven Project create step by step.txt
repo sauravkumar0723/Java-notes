@@ -1,0 +1,6 @@
+Project Create Maven 
+got to File -> New -> Maven Project -> Next -> Filter Write inside maven-archetype-quickstart -> select org.apache.maven.archetypes -> Next -> Group id write com.kodnest -> Artifact ID Write jdbcBatchUpdate -> Finish 
+
+add dependency in project
+
+open browser type maven repository -> go to this website Maven Repository: Search/Browse/Explore -> type inside search mysql jdbc driver then enter -> click MySQL Connector/J -> go to downside select latest Versions 8.3.0 -> go to downside copy dependency -> go to project select pom.xml -> past inside dependencies dependency 
