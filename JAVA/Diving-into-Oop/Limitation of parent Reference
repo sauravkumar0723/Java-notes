@@ -1,0 +1,5 @@
+# Limitation of parent Reference
+
+-- No, A Parent reference can only use the methods that are available in the parent class.
+-- if the child has some extra methods you cannot use them directly unless you convert the refernce.
+
