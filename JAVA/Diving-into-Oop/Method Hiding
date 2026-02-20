@@ -1,0 +1,36 @@
+## Method Hiding
+
+--> Method Hiding happens when a static method in the Child class has the same name and parameters as a static method in the parent class
+--> in this case the method in the child class hides the method in the Parent class.
+E.g :- SChool or tution :-> Both give homework using the same method name but the work in different it depends on where you are calling from school or tution
+
+public class Parent {
+	static void display1()
+	{
+		System.out.println("inside parent display 1");
+	}
+	static void display2()
+	{
+		System.out.println("inside parent display 2");
+	}
+	
+}
+public class Child extends Parent{
+	static void display2()
+	{
+		System.out.println("inside child display 2");
+	}
+}
+public class Main {
+	public static void main(String[] args) {
+		Parent pr1 = new Parent();
+		pr1.display2();
+		pr1.display2();
+		Child ch = new Child();
+		ch.display1();
+		ch.display2();
+		Parent pr2 = new Parent();
+		pr2.display1();
+		pr2.display2();
+	}
+}
