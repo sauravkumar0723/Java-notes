@@ -2,6 +2,7 @@
 --------UPCASTING---------
 -- upcasting is a features in java where a child class object is stored  in parent class refrence.
 -- this happens automatically and is part of java inheritence system
+-- Child level object converting to parent level is known is Upcasting
  **  Why we use it.
     --  to treat multiple type as one
     --  to write cleanes and reusable code.
@@ -56,3 +57,15 @@ public class Main {
 
 Note :- whenever you have to see one to mainy forms is known as Polymorphism.
 e.g: in everyday life is a water water can exits in multiple states. solid(ice),liquid(water), and gas (steam).
+
+--------------- -----------POLYMORPHISM-----------------------------------------------------------
+
+--> In polymerphosim two things must we there 
+1. method overriding
+2. Upcasting
+--> Polymorphism in java is an object oreinted programming concept where a single method or object can perform different behaviours based on the object that call it.
+--> it allow one interface to be used for multiple forms of data.
+
+polymorphism is acheived by using methodoverriding and upcasting
+--> A parent class reference variable can refer to a child class object and java will automatically call the overriden method at run time. this is called dynamic method dispatch.
+
