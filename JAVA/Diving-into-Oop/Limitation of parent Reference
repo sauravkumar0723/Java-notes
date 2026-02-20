@@ -3,3 +3,12 @@
 -- No, A Parent reference can only use the methods that are available in the parent class.
 -- if the child has some extra methods you cannot use them directly unless you convert the refernce.
 
+1.  using parent references only called inherited method
+2. using parent reference only called Overrriden method.
+Note:- using parent reference you can never ever possible to call specialized method. this is the one of the limitation of parent refrence.
+
+
+---- > yes it is possible trough downcasting
+
+
+
