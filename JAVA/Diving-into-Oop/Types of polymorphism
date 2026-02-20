@@ -1,0 +1,79 @@
+## Types of polymorphism
+- 1. Compile-time polymorphism(Method Overloading)
+-- > Having mutiple methods with same name in same class but different Parameter.
+1 : M in compile time
+
+public class Student {
+	void Math()
+	{
+		System.out.println("Student is Doing math home work");
+	}
+	void Math(int a )
+	{
+		System.out.println(a + "in math method with one Parameter");
+	}
+
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Student s = new Student();
+		s.Math();
+		s.Math(23);
+	}
+}
+
+Student is Doing math home work
+23in math method with one Parameter
+
+
+-2. Runtime Polymorphism(Method Overriding)
+Note:- Runtime passing the adress is known is Run time polymorphism
+-- > Having mutiple methods with same name in same class but different Parameter
+- 1.m runtime
+
+public class Developer {
+	void work()
+	{
+		System.out.println("Developr is Wrking");
+	}
+	void project()
+	{
+		System.out.println("Developer doing Project");
+	}
+}
+
+public class JavaDeveloper extends Developer
+{
+	void work() {
+		System.out.println("JavaDevloper is working");
+	}
+	void project()
+	{
+		System.out.println("JavaDevloper is doing java Project");
+	}
+}
+
+
+public class PythonDevloper  extends Developer
+{	
+	void work() 
+	{
+		System.out.println("PythonDevloper is doing python programming");
+	}
+	void project()
+	{
+		System.out.println("PythonDevloper is doing a Python Project");
+	}
+}
+public class Main {
+	public static void main(String[] args) {
+		Developer dev = new JavaDeveloper();
+		dev.work();
+		dev.project();
+		
+		Developer dev1 = new PythonDevloper();
+		dev1.work();
+		dev1.project();	
+	}
+}
