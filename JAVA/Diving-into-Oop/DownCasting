@@ -1,0 +1,49 @@
+# DownCasting
+-- is a way to regain acess to the methods and properties of a subclass from a refrence variables that is currently refreing to a object as it Super Class type.
+-- this is necessary b/c the super class refrence by  default only has to methods and parameters that the superclass known about which includes methods thaat the subclass is overrriden but doesnot include methods that are uniwue to the subclass.
+
+public class Parent {
+	void display1()
+	{
+		System.out.println("inside display one");
+	}
+	void display2()
+	{
+		System.out.println("inside display two");
+	}
+}
+
+
+public class Child extends Parent{
+	void display2()
+	{
+		System.out.println("inside child  display two");
+	}
+	// this is child specialized method
+	void display3()
+	{
+		System.out.println("inside child  display three");
+	}
+}
+public class Main {
+	public static void main(String[] args) {
+		Parent p = new Child();
+		p.display1();
+		p.display2();
+//		p.display3();// it will conert parent refrence to child
+		((Child)(p)).display3();
+		
+		Child c = new Child();
+		c.display1();
+		c.display2();
+		c.display3();
+	}
+}
+
+inside display one
+inside child  display two
+inside child  display three
+inside display one
+inside child  display two
+inside child  display three
+
