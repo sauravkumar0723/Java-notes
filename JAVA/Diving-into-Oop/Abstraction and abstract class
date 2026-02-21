@@ -27,3 +27,55 @@ note :- abstract void disp1() -> these method are technically called abstract me
 {
 // complete method because we have give the body. these method are called concrete method.
 }
+
+abstract class Parent {
+	abstract void disp1();
+	abstract void disp2();
+}
+public class Child1 extends Parent{
+	void disp1()
+	{
+		System.out.println("inside child1 disp1");
+	}
+	void disp2()
+	{
+		System.out.println("inside child1 disp2");
+	}
+}
+public class Child2 extends Parent{
+	void disp1()
+	{
+		System.out.println("inside child2 disp1");
+	}
+	void disp2()
+	{
+		System.out.println("inside child2 disp2");
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Child1 c1 = new Child1();
+		Child2 c2 = new Child2();
+		
+		acessMethod(c1);
+		acessMethod(c2);
+		
+	}
+	public static void acessMethod(Parent ref)
+	{
+		//ref.disp1(); // problem occured if we removed parent class method. so Parent is feeling bad no one is using
+		// due to Problem occured specialized method of child()
+	
+		// ref.disp2(); //
+		// i wnat to resolve the error to provide downcasting
+		if(ref instanceof Child1)
+		{
+			((Child1)ref).disp1();
+			((Child1)ref).disp2();
+		} else {
+			((Child2)ref).disp2();
+			((Child2)ref).disp2();
+		}
+	}
+}
