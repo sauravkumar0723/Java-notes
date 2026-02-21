@@ -1,0 +1,39 @@
+## Interface
+-- Interface in java is defined is used to as abstract type is used to behaviour of method
+-- interface is blueprint/prototype of behaviour of method
+-- an interface contains static constant and abstract methods.
+-- an interface is a set of rule that defines whats methods are implements should have bit it doesnot define how these methods are implements.
+-- A class that implements the interface must provide the code for these methods.
+Example:- Realife example:= 
+Payment system:-
+Different method like credit cards upi or Paypal can implement a payment method interface. this way all payment method follow the same rule but process payment in their own way,
+
+Note :- interace only define whats need to done, not how to do it.
+
+class -----> to ------> class ====> Extends 
+class ------> to _-------> Interface ===> implements
+Interface ------> to _-------> Interface ===>  Extends
+
+interface Shape {
+    void calArea();
+}
+
+class Square implements Shape {
+    public void calArea() {
+        int side = 5;
+        System.out.println(side * side);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Square s = new Square();
+        s.calArea();
+    }
+}
+note:- by default inside the interface, they are under which category whether you write or do not write whatever the methods are presend inside interfaces by default they are public category.
+
+Note :- jo sirf abstract method contain karega usko he sirf pure abstraction method bolenge.
+ interface Shape {
+    public static final   // int a  = 10; // cant change 
+
