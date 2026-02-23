@@ -1,0 +1,33 @@
+## String_Java
+Strings make task like user registered password validation and personalized messaging simple and faster, freedingup time for more important coding tasks
+
+Strings:- A Strings is a sequence of character used to represent text. 
+-- it is treated as a single data type and is enclosed in double quotes "";
+-- Strings are immutable (means they can,t change)
+-- once you have put something inside a String box in java, you cann't change whatinside
+if you modify a string, makes a new Strings with the updated content
+
+memorysaver:- String pool in java
+--> Java uses Smart method to save memory called String pool
+--> the String pool is like a shared storage area where java keeps commonly used in Strings
+
+**** Two ways to create Strings in /java
+-- 1. using Double Quotes(Recommended)
+this is the most common and easiest way to create a string
+String KodNest = "Hello KodNest";
+2. Using the new keyword (less common)
+you can also create a Stirng using the new keyword
+
+String Kodnest = new String("HEllo KodNESt"
+
+mutable Strings:- you can using modify 
+string buffer and string builder
+
+Note:- if you are creating object always on pool given to you . the name is technically String pool
+first run-> Directly Strings will be Printed. Adress will not be Printed
+
+Note:- == --> is compare adress of two Strings
+equals()-> compare the value of String object
+
+Note:- in array individual level Character Level acess not Possible directly
+--> indirectly possible
