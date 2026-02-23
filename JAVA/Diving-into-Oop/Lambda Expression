@@ -1,0 +1,25 @@
+A lambda expression is a short way to represent an anonymous function (method without name).
+
+It is mainly used to implement functional interfaces.
+
+Introduced in Java 8.
+
+🔹 Functional Interface
+
+An interface that contains only ONE abstract method.
+
+Example
+interface Demo {
+    void show();
+}
+
+✔ Can have multiple default & static methods
+✔ Must have only one abstract method
+
+🔹 Basic Syntax
+(parameters) -> { body }
+Examples
+() -> System.out.println("Hello");
+(a, b) -> a + b;
+(int a) -> { return a * a; }
+
