@@ -1,0 +1,28 @@
+Palindrome
+
+import java.util.Scanner;
+
+public class Palindrome {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s1 = sc.nextLine();
+		// convert string into character array
+		char charArray[] = s1.toCharArray();
+		// reverse the array
+		char rev[] = new char[charArray.length];
+		//  reverse logic
+		int j = rev.length-1;
+		for (int i = 0; i <= charArray.length-1; i++)
+		{
+			rev[j] = charArray[i];
+			j--;
+		}
+		String str = new String(rev);
+		if(str.equals(s1))
+		{
+			System.out.println(str + " is a palindrome");
+		} else {
+			System.out.println(str + " is not a palindrome");
+		}
+	}
+}
