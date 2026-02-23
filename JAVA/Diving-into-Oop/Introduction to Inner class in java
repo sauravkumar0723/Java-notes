@@ -1,0 +1,108 @@
+# Introduction to Inner class in java
+-- Inner class :- An inner class in java is a class that is defined within another class.
+-- inner class helps logically group related functionality makin g the code more modular to earlier to manage
+
+** 4types of inner class:-
+1. member inner clas:- define inside another class typically creating object closely related to the outern class.
+2. static inner class:- define inside a class but donot need an instance of the outer class
+3. Local inner class:- Define within methods useful for temporary tasks
+4. anonymus class:- class without names, creation on -the - fly for short term use.
+
+1. member inner class
+package com.kod.memberInnerclass;
+
+public class Program1 {
+	int a  = 10;
+	class Program2
+	{
+		int b = 20;
+		void dispProgram2()
+		{
+			System.out.println(a);
+			System.out.println(b);
+		}
+	}
+	void dispProgram1()
+	{
+		System.out.println(a);
+		Program2 p2 = new Program2();
+		p2.dispProgram2();
+	}
+}
+
+// main  class
+
+public class Main {
+	public static void main(String[] args) {
+		Program1 p1 = new Program1();   // create outer class object
+		p1.dispProgram1();
+		//Program2 p2 = new Program2();  // Error
+		// can't go out of the class it is not possible to create object of which class --> member inner class
+		// 
+		
+		// alternative way of member innerclass
+		Program1.Program2 p2 = p1.new Program2();
+		p2.dispProgram2();;
+	}
+}
+
+
+
+2. static nested class:-
+public class Program1 {
+	int a  = 10;
+static	class Program2
+	{
+		static int b = 20;
+	static	void dispProgram2()
+		{
+			System.out.println(b);
+		}
+	}
+	void dispProgram1()
+	{
+		System.out.println(a);
+		Program2 p2 = new Program2();
+		p2.dispProgram2();
+	}
+}
+
+// main  class
+
+public class Main {
+	public static void main(String[] args) {
+Program1.Program2.dispProgram2();
+	}
+}
+
+3. local class
+class Outerclass{
+   void some method() {
+    // local class define inside the method
+   class LocalClass {
+      void display {
+        System.out.println("inside local class);
+   }
+}
+
+localClass lc = new LocalClass();
+LocalClass.display();
+
+4. abstract class Program {
+    abstract void disp() 
+    }
+public class Main {
+    public static void main(String[] args) {
+
+        Program p = new Program() {
+
+            @Override
+            void disp() {
+                System.out.println("Inside display");
+            }
+
+        };
+
+        p.disp();
+    }
+}
