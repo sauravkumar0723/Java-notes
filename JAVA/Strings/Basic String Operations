@@ -1,0 +1,66 @@
+What Exactly Are Basic String Operations?
+
+Standard Definition:
+
+A String operation is an action you can perform on a string (a piece of text) in Java. These operations help you manipulate text, like finding the length of a string, comparing two strings, combining strings, or extracting part of a string.
+
+
+1. Java String split() — what it does
+-- split() breaks one string into multiple parts using a separator (delimiter) and returns a String array.
+-- trim() removes extra spaces from the beginning and end of a string.
+-- What substring() does
+-- It is used to extract a part of a string.
+-- parseInt() converts a String into an int value.
+
+
+Creating a String
+String s1 = "Hello";
+String s2 = new String("Hello");
+2. String Length
+String s = "Java";
+int len = s.length();
+3. Convert to Uppercase and Lowercase
+s.toUpperCase();
+s.toLowerCase();
+4. Character at Specific Index
+char ch = s.charAt(2);
+5. Compare Strings
+s1.equals(s2);
+s1.equalsIgnoreCase(s2);
+s1.compareTo(s2);
+6. Concatenation
+String s3 = s1 + s2;
+String s4 = s1.concat(s2);
+7. Substring
+s.substring(1);
+s.substring(1, 4);
+8. Contains
+s.contains("va");
+9. StartsWith and EndsWith
+s.startsWith("Ja");
+s.endsWith("va");
+10. Index Of
+s.indexOf('a');
+s.lastIndexOf('a');
+11. Replace
+s.replace('a', 'o');
+s.replace("Ja", "Ta");
+12. Trim (Remove Spaces)
+String s = "  Java  ";
+s.trim();
+13. Convert Number to String and String to Number
+int num = 10;
+String str = String.valueOf(num);
+
+int n = Integer.parseInt("123");
+14. Convert to Char Array
+char[] arr = s.toCharArray();
+15. Split
+String s = "Java Python C";
+String[] words = s.split(" ");
+Important Interview Point
+
+String is immutable.
+
+String s = "Java";
+s.concat(" World");
