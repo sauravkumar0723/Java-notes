@@ -1,0 +1,18 @@
+append() is used to add data at the end of a StringBuilder or StringBuffer.
+
+Why it is used
+
+String is immutable (cannot be changed), so for modifying a string without creating new objects we use append().
+
+Syntax
+StringBuilder sb = new StringBuilder();
+sb.append(data);
+Example
+StringBuilder sb = new StringBuilder("Java");
+sb.append(" Programming");
+
+System.out.println(sb);
+
+Output:
+
+Java Programming
