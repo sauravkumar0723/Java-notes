@@ -1,0 +1,21 @@
+# Hibernate Core Dependency
+Step 2: Add Hibernate Dependencies in pom.xml
+- Now that your Maven project is set up, let's add some dependencies. Dependencies are like ingredients for a recipe- without them, your Java app won't work.
+. Open pom.xml: In your project folder, find and open the pom.xml file. This file keeps track of what your project needs.
+. Add Hibernate Core and MySQL Connector: Add the following inside the <dependencies> section:
+
+<dependencies>
+<!-- Hibernate Core Dependency -- >
+<dependency>
+<groupld>org.hibernate</groupld>
+<artifactld>hibernate-core</artifactld>
+<version>5.6.9.Final</version>
+</dependency>
+
+<!-- MySQL Connector Dependency -- >
+<dependency>
+<groupld>mysql</groupld>
+<artifactld>mysql-connector-java</artifactld>
+<version>8.0.28</version>
+</dependency>
+</dependencies>
