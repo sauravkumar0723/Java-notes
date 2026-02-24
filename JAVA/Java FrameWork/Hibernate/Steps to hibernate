@@ -1,0 +1,20 @@
+# Steps to hibernate
+Summary of Steps in Hibernate
+
+1. Load the Configuration: Set up connection details.
+2. Create a SessionFactory: Prepare the main hub for sessions.
+3. Open a Session: Establish a connection to the database.
+4. Begin a Transaction: Group operations safely.
+5. Perform CRUD Operations: Create, Read, Update, Delete data.
+6. Commit the Transaction: Save all changes.
+7. Close the Session: Release resources.
+8. Close the SessionFactory: Shut down Hibernate properly.
+
+
+Step 1: Load the Configuration File
+
+- Before anything else, Hibernate needs to know how to connect to your database. This is like preparing your workspace by setting up the rules and ensuring everything is ready.
+. Load the Configuration: Use the Configuration class to read the hibernate.cfg.xml file, which contains settings such as database connection details.
+//
+Configuration configuration = new Configuration();
+configuration.configure("hibernate.cfg.xml");
