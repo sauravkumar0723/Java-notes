@@ -1,0 +1,36 @@
+# Hibernate_Intro
+Q. What is Hibernate?
+- Hibernate is an open-source Java framework that simplifies the process of working with relational databases in Java applications. 
+- It acts as a bridge between Java objects and database tables.
+
+- In technical terms, Hibernate is an Object-Relational Mapping (ORM) framework. 
+- ORM is a programming technique that allows you to map Java classes (objects) to database tables and vice versa. 
+- This means you can perform database operations using Java objects without writing complex SQL queries manually.
+
+
+
+Key Concepts of Hibernate
+1. Session
+- Represents a connection between a Java application and the database. It is used to perform CRUD operations.
+2. Configuration
+- Contains information about database connection settings and Hibernate properties.
+3. Mapping
+- Defines how Java classes are linked to database tables. This can be done using XML configuration or annotations.
+4. Transaction Management
+- Hibernate provides built-in support for managing transactions to ensure data consistency.
+Key Takeaways
+
+. Hibernate is an ORM framework for Java that simplifies database operations.
+. It reduces the need for writing SQL queries manually by mapping Java objects to database tables.
+. Hibernate supports database independence and improves productivity.
+. It is ideal for medium to large-scale applications that require frequent database interactions.
+. For very small projects or when tight SQL control is required, Hibernate might not be necessary.
+Common Interview Questions and Answers
+
+Q1: What is Hibernate in Java?
+Hibernate is an open-source ORM framework that simplifies the interaction between Java applications and relational databases by mapping Java objects to database tables.
+
+Q2: What are the advantages of using Hibernate over JDBC?
+Hibernate reduces boilerplate code, supports database independence, and provides features like caching, lazy loading, and automatic table creation, which JDBC does not offer.
+
+
