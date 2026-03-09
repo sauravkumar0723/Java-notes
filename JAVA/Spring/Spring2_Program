@@ -1,0 +1,208 @@
+package com.kodnest.spring2;
+
+import java.util.Objects;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Student {
+	int id;
+	String name;
+	int marks;
+	
+	
+	void study()
+	{
+		System.out.println("Student is studying");
+	}
+	
+	void reading() {
+		System.out.println("Student is reading");
+	}
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Student(int id, String name, int marks) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.marks = marks;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + "]";
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getMarks() {
+		return marks;
+	}
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, marks, name);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		return id == other.id && marks == other.marks && Objects.equals(name, other.name);
+	}
+	
+	
+}
+
+
+// package com.kodnest.spring2;
+
+import java.util.Objects;
+
+import org.springframework.stereotype.Component;
+@Component
+public class Employee {
+	int empID;
+	String empName;
+	int salary;
+	
+	void work()
+	{
+		System.out.println("employee is working");
+	}
+	
+	void eat()
+	{
+		System.out.println("employee is eating");
+	}
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Employee(int empID, String empName, int salary) {
+		super();
+		this.empID = empID;
+		this.empName = empName;
+		this.salary = salary;
+	}
+	public int getEmpID() {
+		return empID;
+	}
+	public void setEmpID(int empID) {
+		this.empID = empID;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empID=" + empID + ", empName=" + empName + ", salary=" + salary + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(empID, empName, salary);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		return empID == other.empID && Objects.equals(empName, other.empName) && salary == other.salary;
+	}
+	
+	
+}
+
+// main method
+package com.kodnest.spring2;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class Spring2Application {
+
+	public static void main(String[] args) {
+		 ApplicationContext ref = SpringApplication.run(Spring2Application.class, args);
+		 
+		 Student s1 = ref.getBean(Student.class);
+		 System.out.println("Student Details");
+		 System.out.println(s1.id);
+		 System.out.println(s1.name);
+		 System.out.println(s1.marks);
+		 s1.study();
+		 s1.reading();
+		 
+		 System.out.println("=======================");
+		 Employee e = ref.getBean(Employee.class);
+		 System.out.println("Employee Details------------");
+		 System.out.println(e.empID);
+		 System.out.println(e.empName);
+		 System.out.println(e.salary);
+		 
+		 e.work();
+		 e.eat();
+	}
+
+}
+
+
+output:- 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.3)
+
+2026-03-10T00:27:04.453+05:30  INFO 13292 --- [spring2] [           main] com.kodnest.spring2.Spring2Application   : Starting Spring2Application using Java 21.0.10 with PID 13292 (C:\Users\Saurav Kumar\Downloads\spring2\spring2\target\classes started by Saurav Kumar in C:\Users\Saurav Kumar\Downloads\spring2\spring2)
+2026-03-10T00:27:04.457+05:30  INFO 13292 --- [spring2] [           main] com.kodnest.spring2.Spring2Application   : No active profile set, falling back to 1 default profile: "default"
+2026-03-10T00:27:04.965+05:30  INFO 13292 --- [spring2] [           main] com.kodnest.spring2.Spring2Application   : Started Spring2Application in 0.926 seconds (process running for 1.459)
+Student Details
+0
+null
+0
+Student is studying
+Student is reading
+=======================
+Employee Details------------
+0
+null
+0
+employee is working
+employee is eating
+
+
