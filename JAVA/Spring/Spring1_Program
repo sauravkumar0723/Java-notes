@@ -1,0 +1,89 @@
+// Bean
+
+package com.kodnest.spring1;
+
+import java.util.Objects;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Student {
+	int roll = 23;
+	String name = "Saurav";
+	public Student() {
+		super();
+	}
+	public Student(int roll, String name) {
+		super();
+		this.roll = roll;
+		this.name = name;
+	}
+	public int getRoll() {
+		return roll;
+	}
+	public void setRoll(int roll) {
+		this.roll = roll;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	@Override
+	public String toString() {
+		return "Student [roll=" + roll + ", name=" + name + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, roll);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		return Objects.equals(name, other.name) && roll == other.roll;
+	}
+}
+// main method
+
+package com.kodnest.spring1;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class Spring1Application {
+
+	public static void main(String[] args) {
+	ApplicationContext ref = SpringApplication.run(Spring1Application.class, args);
+	
+	Student s1 = ref.getBean(Student.class);
+	
+	System.out.println(s1.roll);
+	System.out.println(s1.name);
+	}
+
+}
+
+Output:- 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.3)
+
+2026-03-09T23:51:16.141+05:30  INFO 8480 --- [spring1] [           main] com.kodnest.spring1.Spring1Application   : Starting Spring1Application using Java 21.0.10 with PID 8480 (C:\Users\Saurav Kumar\Downloads\spring1\spring1\target\classes started by Saurav Kumar in C:\Users\Saurav Kumar\Downloads\spring1\spring1)
+2026-03-09T23:51:16.145+05:30  INFO 8480 --- [spring1] [           main] com.kodnest.spring1.Spring1Application   : No active profile set, falling back to 1 default profile: "default"
+2026-03-09T23:51:16.949+05:30  INFO 8480 --- [spring1] [           main] com.kodnest.spring1.Spring1Application   : Started Spring1Application in 1.324 seconds (process running for 1.786)
+23
+Saurav
