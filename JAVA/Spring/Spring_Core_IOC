@@ -1,0 +1,3 @@
+# IOC (Inversion of Container)
+
+Note :- if Objects is created and managed by Spring is called as Bean.
