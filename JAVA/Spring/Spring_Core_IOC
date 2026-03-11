@@ -6,6 +6,9 @@ Ioc is designed Principle in software development where the Control of Objects C
 -> Tight coupling
 -> No dependecy injection 
 
+---> new employee() -> Employee Objects
+   --> Spring created Object of employee --> EMployee Bean.
+
 Note :- if Objects is created and managed by Spring is called as Bean.
 
 Q. How to create Spring to Objects?
