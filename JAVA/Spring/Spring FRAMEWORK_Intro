@@ -1,0 +1,43 @@
+# Spring FrameWork
+-> Spring FrameWork is a set of tools that helps JavaDevelopers to build Applications faster and more easily.
+-> It Provides a ready to use Structure of your Code.
+-> You don't need to write everthing from scratch.
+
+why do DEvelopers use Spring?
+-> Write a less Code.
+-> Automatically connect different parts of the Object.
+-> Communicate with database Using Simple Code.
+-> Get Help with common problems like error handling, Security and more
+
+*****
+Spring is a light-weigth Java Framwork use to build enterprise level Applications
+-> It Provides complete InfraStructure Support for developing Java application and help you write clean loosely coupled and maintainable code.
+-> Spring Frameworks is like a manager.
+
+NOTE:- Spring divided into small small module.
+
+*** Spring BENEFITS:-
+1. object creation
+2. Dependency Injection
+3. Manage Configuration
+4. Data Integration
+5. Handling WEbREQ & Security.
+
+--> Spring support Convention Over Configuration
+
+************* Spring Module:-   ***************
+1. Spring Core:- 
+-> this is the base of the entire Spring Framework.
+-> the most important features in this is dependency injectioin(DI).
+-> What it Does:- Spring core automatically creates and Connects the Objects Your applications needs
+-> you don't have write the code to creates the objects again and again.
+
+2. Spring MVC:-
+-> this module is used to build webapplication.
+-> it follow Model-view-controller(MVC) which make your code more orgainized and easy to manage.
+
+3. spring boot
+4. Spring Security
+5. spring data
+6.spring cloud
+7. spring Batch
