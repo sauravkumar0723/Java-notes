@@ -1,3 +1,20 @@
 # IOC (Inversion of Container)
 
+Ioc is designed Principle in software development where the Control of Objects Creation & Dependency Managment is transferred from the application code into a framework or container.
+
+********PROBLEM WITH NEW KEYWORD*********
+-> Tight coupling
+-> No dependecy injection 
+
 Note :- if Objects is created and managed by Spring is called as Bean.
+
+Q. How to create Spring to Objects?
+ANS-> With the help of IOC COntainer
+1. it is a core part of spring Framework.
+2. Responsible for Object Managment.
+
+** SPRING Provide two IOc COntainer
+1. BeanFactory  -> is type of IOC container (INTERFACE)
+2. APPlication Context. (INTERFACE) classPathXMlApplicationContext(LATEST)
+
+
