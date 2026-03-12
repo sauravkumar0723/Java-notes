@@ -24,3 +24,73 @@ Example:
 <bean id="emp" class="Employee" scope="prototype"/>
 Employee e1 = (Employee) ac.getBean("emp");
 Employee e2 = (Employee) ac.getBean("emp");
+
+
+package com.codeHunt.spring_CodeHunt1;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Employee {
+	private int test;
+	static {
+		System.out.println("emp bean loading");
+	}
+	public Employee() {
+		System.out.println("Employee been Instantiated");
+	}
+	public void test() {
+		System.out.println("Emp tested........." + test);
+	}
+	public int getTest() {
+		return test;
+	}
+	public void setTest(int test) {
+		this.test = test;
+	}
+}
+
+package com.codeHunt.spring_CodeHunt1;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Launch {
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+		
+		
+//		2️ id="emp"
+//
+//				This is the bean name (bean id).
+//
+//				You use this id to get the object from the container.
+		
+		Employee emp1 = (Employee) ac.getBean("emp");
+		emp1.setTest(1000);
+		emp1.test();
+		
+		
+//		getBean() is a method of Spring container
+//
+//		"emp" is the bean id written in bean.xml
+		
+		Employee emp2 = (Employee) ac.getBean("emp");
+//		emp2.setTest(1000);
+		emp2.test();
+	}
+}
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+        <bean id="emp" class="com.codeHunt.spring_CodeHunt1.Employee" lazy-init="true" scope="prototype"></bean>
+     
+</beans>
+
+o/p:- Employee been Instantiated
+Emp tested.........1000
+Employee been Instantiated
+Emp tested.........0
+
