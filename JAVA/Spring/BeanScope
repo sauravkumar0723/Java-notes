@@ -1,0 +1,26 @@
+Singleton Scope (Default)
+Definition:
+In singleton scope, Spring creates only one instance of the bean per container.
+Every call to getBean() for that bean returns the same object.
+Key Points:
+Default scope in Spring
+Object is created when container starts (unless lazy-init=true)
+Constructor runs only once
+Example:
+<bean id="emp" class="Employee" scope="singleton"/>
+Employee e1 = (Employee) ac.getBean("emp");
+Employee e2 = (Employee) ac.getBean("emp");
+
+
+Prototype Scope
+Definition:
+In prototype scope, Spring creates a new instance of the bean every time getBean() is called.
+Key Points:
+Every getBean() → new object
+Constructor runs every time
+lazy-init is ignored because object is created on demand
+Example:
+
+<bean id="emp" class="Employee" scope="prototype"/>
+Employee e1 = (Employee) ac.getBean("emp");
+Employee e2 = (Employee) ac.getBean("emp");
