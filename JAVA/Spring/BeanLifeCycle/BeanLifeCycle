@@ -1,19 +1,32 @@
 #BeanLifeCycle
+//Day4
+--> it refers to the sequence of events that occur from the creation of a bean to its destroy in the spring container(Ioc).
 //Day4 
 --> Instantiation
 --> Dependecy Injection
---> Initialization
+--> Initialization (setup ready) 
 --> Bean is ready to use (you can call us or custom methods)
 --> Destroy
 
-1. Instantiation-> There are Three ways to Bean Instantiation.
+********Dependancy --> means --> Field **************** 
+
+1. Instantiation:-> 
+** There are Three ways to Bean Instantiation.
  1. simple<bean> :- e.g:- <bean> id="emp" class="com.main.app.Employee" <beam/>
 --> Spring will be use the default constructor no logic no value
  
  2. Simple bean with some dependecy :-
  <bean> : <property> or <construct-arg>   </bean>
 
- 3. Simple bean with some logic (Java Code)  ----> static Factory method
+ 3. Simple bean with some logic (Java Code)  
+    ----> static Factory method
+   --> Add custom logic of object creation (UUID)
+   ** if you want logic like UUID Generation or some default during cretion then 
+     <bean id="emp" class="com.mainapp.ObjectFactory"  factory-method="getObject" />
+   ** this is the static factory method approach
+--> but Spring cannot inject dependencies like Account inside that method directly b/c spring doesn't manage static methods internals.
 
 ***** Seperation Concern
- 4. Complex bean with some logic (java code) ......instance factory method 
+ 4. Complex bean with some logic (java code) 
+     ......> use instance factory method 
+--> Add Logic + dependecy injection uuid(Universe Unique Identifier) + Account from Spring).
