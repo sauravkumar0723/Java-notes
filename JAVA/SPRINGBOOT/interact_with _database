@@ -1,0 +1,96 @@
+How to interact with database? 
+
+Ans:- Spring makes database interaction under much easier compared to plain jdbc.
+--> To interact with database in spring boot, it provides a very powerful concept called spring data jpa.
+--> this model is build on top of jpa (JAVA PERSISTANCE API ) and makes database operations extremely easy by removing the need for most boilerplate code.
+--> with Spring DATA JPA , you can perform CRUD(CREATE, READ, UPDATE , DELETE) Operations , pagination, Sorting, and even complex Query- often without writing a single line of SQL.
+
+** JPA, Hibernate and SPRING JPA:- 
+1. JPA:- type : - specifictions (not an implementations)
+         purpose:- Defines a set of interfae=ce and annotations for ORM(Object realtion mapping) operations.
+2. Hibernate:- type:- ORM framework(implementation of jpa + it own native API)
+         Prupose:- implements JPA-> makes JPA Interface Work.
+             --> provides it OWN native API (more powerful and features- rich than standard JPA.
+3. SPRING BOOT And JPA:- 
+--> In SPRING BOOT JPA is used as Specifications.
+--> By Default, spring BOOT  uses hibernate  + JPA implemetations
+--> without extra   , using JPA + hibernate means
+      . manual repository creation
+       . manual method writing
+       . manual wiring
+4. Spring DATA JPA:- 
+-- > type: - part of the spring data family.
+--> purpose:- simplifies jpa usage in spring boot by removing boiler plate code.
+--> working on TOp of : JPA--> Hibernate.
+
+    key features:-
+       . automatically creates repository implements at runtime.
+       . no need to write sql for most CRUD OPerations.
+       . supports methods- name based on Queries.
+
+Main Interface:- 
+    CRUD Interface
+    JPA interface
+Note:- In spring boot , when we create an interface like myRepo and extends JPA Repository , we don't write any code for methods such as findBy() --> we only declare that we want them.
+--> when the application starts , spring automatically creates a special objects for our interfaces that already has the working code inside.
+
+
+Q. Difference b/w CRUD Repository and JPA Repository ?
+Ans:- 
+1. CRUD Repository :- 
+--> Basic database operations : Save() , findById(), etc
+--> Good for simple CRUD WORK.
+less features.
+
+2. JPA Repository:-
+--> includes everything from CRUD Repository 
+--> ADD extra JPA-related feautres like 
+     1. pagination.
+     2. sorting
+     3. Batch operation
+in short:- 
+. JPA Repository =  CRUD Repository + Extra features for pagination, sorting and advacned JPA support.
+
+                           Repository 
+                               ↑
+                               ↑
+                          CRUD Operation
+                               ↑
+                               ↑
+                          Pagination and sorting
+                               ↑
+                               ↑
+                            JPA Repository
+
+**** Spring DATA JPA automatically implements repository methods if you follow a specific naming convention
+--> methods like findByName(), containing are called derived methods, and springboot automatically genreate their implements at runtime , so you don't have to write custom Queries manually.
+
+**** common keywords in spring DATA JPA methods names
+--> these keywords are used after your entity fieldname in methods name, spring data JPA wil create these QUery automatically
+    keywords                             Examplemethods
+--> findby                                findByName
+--> GREATER than                           findByGraterThan
+
+**** SpringApplicaton .run(your project Name.class, arg in the Starting point
+   when you call it.
+--> it starts the spring framework
+--> created the springApplication(Container where all beans/ object are managed).
+--> runs auto configuration (SETUp beans on developments)
+--> Scans yoour project for @Component, @Repository, e.t.c and creates the objects
+--> finally it keeps your running(for webapps, it start embeded tomcat server
+--> with it spring boot not- start.
+--> configureApplicationContext--> think of a spring bean continer interface that holds all your beans and can be started , stopped and refreshed.
+
+*** lombook in springBoot:-
+   --> Lombook is  a java library that less code by automatically genrating common methods like getters setters constructors toString() etc at compile time.
+
+* Commpn Lombook Annotations;-
+-> @GETTER
+-> @SETTER
+-> @DATA
+-> @NoArgsConstructor
+-> @ALLargsConstructor
+-> @Builder
+
+
+  
