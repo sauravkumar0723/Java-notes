@@ -1,0 +1,26 @@
+## SpringBoot Introduction:-
+--> SpringBoot is a simplified Framework it is built on top of Spring.
+--> it is designed to reduced Configuration and development time while offering tools like built-in-service and auto configuration,
+--> think it is a "Fast-lane DEvelopers".
+
+* The purpose of behind springboot
+-> SpringBoot was introduced to removed the all the unnecessary work and help developers to focus on building the actual logic.
+
+* spring- framework:-> A flecible framework for creating, enterprise- level- application, requuiring manual setup and configuration.
+
+* Key Features:- built-in webserver :- comes with embeded server such as tomcat
+                 --> Auto Configuration:- 
+                 --> starter template:- 
+                       . spring boot starter web
+                       . Spring boot starter data jpa
+                --> no xml configuration.
+
+* A real-life Example:->
+- A Student Managemnt System
+    --> let us say you are building system for a school where students can register teachers can upload assignments and the admin can genrate repors
+Using Springboot:-
+   - you can stup backend with just few lines of codes.
+   - the built - in server allow you to test your application immediately.
+   - starter template help you connect to a database without complex setup.
+   - you can focus on writing features like registration and assignment upload rather that dealing with server
+
