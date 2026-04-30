@@ -1,0 +1,106 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> 
+
+
+<!--1. byName-->
+     <!-- <bean id="account" class="com.codeHunt.spring_CodeHunt1.Account">
+      <property name="an" value="121212"></property>
+      <property name="bankName" value="xyzBank" ></property>
+      </bean>
+      
+       <bean id="car" class="com.codeHunt.spring_CodeHunt1.Car" >
+       <property name="cn" value="9999"></property>
+      <property name="carName" value="xyzCA" ></property>
+       </bean>
+       
+       <util:list id="listOfBooks">
+       <value>JavaByCodeHunt</value>
+       <value>SpringByCodeHunt</value>
+       </util:list>
+
+
+     <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee" autowire="byName"> 
+      <property name="eid" value="123412"></property>
+      </bean>-->  
+      
+      <!--===============================================-->
+    <!-- 2. bytype-->
+   <!--  <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee" autowire="byType"> 
+      <property name="eid" value="123412"></property>
+      </bean>
+      
+     <bean id="account1" class="com.codeHunt.spring_CodeHunt1.Account">
+      <property name="an" value="121212"></property>
+      <property name="bankName" value="xyzBank" ></property>
+      </bean>
+      
+       <bean id="car1" class="com.codeHunt.spring_CodeHunt1.Car" >
+       <property name="cn" value="9999"></property>
+      <property name="carName" value="xyzCA" ></property>
+       </bean>
+       
+       <util:list id="listOfBooks1">
+       <value>JavaByCodeHunt</value>
+       <value>SpringByCodeHunt</value>
+       </util:list> -->
+
+       <!--=====================================================-->
+    
+       <!-- 3. constructor-->
+       
+     <!--  <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee" autowire="constructor"> 
+      <property name="eid" value="123412"></property>
+      </bean>
+      
+      <bean id="account1" class="com.codeHunt.spring_CodeHunt1.Account">
+      <property name="an" value="121212"></property>
+      <property name="bankName" value="xyzBank" ></property>
+      </bean>
+      
+       <bean id="car1" class="com.codeHunt.spring_CodeHunt1.Car" >
+       <property name="cn" value="9999"></property>
+      <property name="carName" value="xyzCA" ></property>
+       </bean>
+       
+       <util:list id="listOfBooks1">
+       <value>JavaByCodeHunt</value>
+       <value>SpringByCodeHunt</value>
+       </util:list>-->
+       
+       <!--=========================================-->
+       
+       <!--3.1. primary true-->
+         <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee" autowire="constructor"> 
+      <property name="eid" value="123412"></property>
+      </bean>
+      
+      <bean id="account1" class="com.codeHunt.spring_CodeHunt1.Account" primary="true">
+      <property name="an" value="121212"></property>
+      <property name="bankName" value="xyzBank2" ></property>
+      </bean>
+      
+      <bean id="account2" class="com.codeHunt.spring_CodeHunt1.Account">
+      <property name="an" value="1212122"></property>
+      <property name="bankName" value="xyzBank2" ></property>
+      </bean>
+      
+       <bean id="car1" class="com.codeHunt.spring_CodeHunt1.Car" >
+       <property name="cn" value="9999"></property>
+      <property name="carName" value="xyzCA" ></property>
+       </bean>
+       
+       <util:list id="listOfBooks1">
+       <value>JavaByCodeHunt</value>
+       <value>SpringByCodeHunt</value>
+       </util:list>
+       
+       <!--==========================================-->
+       <!--4. default & no -->
+       
+</beans>
+
+
+
