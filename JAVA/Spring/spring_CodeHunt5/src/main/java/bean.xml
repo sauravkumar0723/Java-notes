@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+
+             <bean id="parentBean" abstract="true">
+             <property name="url" value="jdbc:mysql://Localhost:3306"></property>
+             <property name="countryCode" value="1122"></property>
+             </bean>
+             
+
+      <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee">
+      <property name="url" value="jdbc:mysql://Localhost:3306"></property>
+      <property name="countryCode" value="1122"></property>
+      <property name="eid" value="123412"></property>
+      </bean>
+         
+      <bean id="manager" class="com.codeHunt.spring_CodeHunt1.Manager" parent="parentBean">
+      <property name="mid" value="17658"></property>
+      </bean>
+      
+      <bean id="student" class="com.codeHunt.spring_CodeHunt1.Student" parent="parentBean">
+      <property name="roll" value="14"></property>
+      </bean>
+      
+      
+</beans>

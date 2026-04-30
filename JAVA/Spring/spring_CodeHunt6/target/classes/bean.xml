@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+
+             
+             
+
+    <!-- 1. ye mera ArrayList dega by default  -->
+      <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee" >
+      <property name="eid" value="123412"></property>
+      <property name="ename" value="raju"></property>
+      <property name="ListOfBooks">
+      <list>
+      <value>JavabyCodeHunt</value>
+      <value>SpringbyCodeHunt</value>
+      <value>JavaeebyCodeHunt</value>
+      </list>
+      </property>
+      </bean> 
+      
+      <!--   2. approach -> isko hm standalone approach bolte hain
+      <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee" >
+      <property name="eid" value="123412"></property>
+      <property name="ename" value="raju"></property>
+      <property name="ListOfBooks" ref="myList"></property>
+      </bean>
+      
+      <util:list id="myList" list-class="java.util.LinkedList">
+      <value>JavabyCodeHunt</value>
+      <value>SpringbyCodeHunt</value>
+      <value>JavaeebyCodeHunt</value>
+      </util:list> 
+      -->
+      <!-- 3. 
+       <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee" >
+      <property name="eid" value="123412"></property>
+      <property name="ename" value="raju"></property>
+      <property name="ListOfBooks"></property>
+      </bean> 
+      
+      <bean id="myList" class="java.util.LinkedList">
+     <constructor-arg>
+     <list>
+     
+     <value>JavabyCodeHunt</value>
+      <value>SpringbyCodeHunt</value>
+      <value>JavaeebyCodeHunt</value>
+    
+     </list>
+     </constructor-arg>
+      </bean> -->
+      
+      
+</beans>

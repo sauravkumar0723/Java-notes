@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+       <!-- <bean id="emp" class="com.codeHunt.spring_CodeHunt1.Employee"></bean>  
+       1. Instantiation jb Bean ek dm simple hain to itna <bean> tag kafi hai -> yes enough hain -->
+       
+       <!-- 2. Property tag uses :- when we use tag setter is present in the bean 
+         <bean id="emp" class="com.codeHunt.spring_CodeHunt1.Employee">
+         <property name="id" value="1212"></property>
+         </bean>  -->
+         
+         <!-- 2.ii. Constructor-arg -> we use constructor-arg when constructor must be present in the bean class 
+         <bean id="emp" class="com.codeHunt.spring_CodeHunt1.Employee">
+         <constructor-arg name="id" value="2323"></constructor-arg>
+         </bean> -->
+         
+         <!-- 3. simple bean with some logic
+         <bean id="emp" class="com.codeHunt.spring_CodeHunt1.Employee" factory-method="getObject">
+         
+         </bean> -->
+         <!-- 4. seperation concern
+         <bean id="emp" class="com.codeHunt.spring_CodeHunt1.ObjectFactory" factory-method="getObject">
+         
+         </bean> -->
+         
+         <!-- 5. complex bean with some logic -->
+         
+         <bean id="acc" class="com.codeHunt.spring_CodeHunt1.Account"></bean>
+         
+         <bean id="ObjectFactory" class="com.codeHunt.spring_CodeHunt1.ObjectFactory">
+         
+         <property name="account" ref="acc"></property>
+         
+         </bean>
+         <bean id="emp" factory-bean="ObjectFactory" factory-method="getObject"></bean>
+         
+</beans>
