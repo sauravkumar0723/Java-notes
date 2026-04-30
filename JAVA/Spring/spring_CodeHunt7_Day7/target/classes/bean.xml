@@ -1,0 +1,63 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> 
+
+
+
+
+
+
+ <!-- <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee"> 
+      <property name="eid" value="123412"></property>
+      <property name="ename" value="saurav"></property>
+      <property name="listOfBooks">
+      <list>
+      <value>JAVABYCODEHUNT</value>
+      <value>SPRINGBYCODEHUNT</value>
+      <value>JAVAEEBYCODEHUNT</value>
+      </list>
+      </property>
+      </bean>  -->
+         
+       <!--   
+       <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee"> 
+      <property name="eid" value="123412"></property>
+      <property name="ename" value="saurav"></property>
+      <property name="listOfBooks" ref="myList">
+     
+      </property>
+      </bean>
+       Stand ALone Approach
+      <util:list id="myList" list-class="java.util.LinkedList">
+       
+      <value>JAVABYCODEHUNT</value>
+      <value>SPRINGBYCODEHUNT</value>
+      <value>JAVAEEBYCODEHUNT</value>
+      
+      </util:list> -->
+      
+      <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee"> 
+      <property name="eid" value="123412"></property>
+      <property name="ename" value="saurav"></property>
+      <property name="listOfBooks" ref="myList"></property>
+       </bean>
+      
+      <bean id="myList" class="java.util.linkedList">
+      <constructor-arg>
+          <list>
+             <value>JAVABYCODEHUNT</value>
+             <value>SPRINGBYCODEHUNT</value>
+             <value>JAVAEEBYCODEHUNT</value>
+          </list>
+      </constructor-arg>
+      
+      </bean>
+      
+      
+      
+</beans>
+
+
+

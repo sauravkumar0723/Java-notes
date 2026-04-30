@@ -1,0 +1,58 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> 
+
+
+
+
+
+
+      <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee"> 
+      <property name="eid" value="123412"></property>
+      <property name="ename" value="saurav"></property>
+      <property name="mapOfBooks">
+      <map>
+      <entry key="book1010" value="JavaByCODEhunt"></entry>
+      <entry key="book1011" value="SPRINGBYCODEHUNT"></entry>
+      <entry key="book1012" value="JAVAEEBYCODEHUNT"></entry>
+      </map>
+      </property>
+      </bean>  
+      
+       <!-- 2. define -->  
+    <!--  <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee"> 
+      <property name="eid" value="123412"></property>
+      <property name="ename" value="saurav"></property>
+      <property name="setOfBooks" ref="mySet"> </property>
+      </bean>
+      
+      STandAlone 
+      <util:set id="mySet" set-class="java.util.TreeSet" >
+      <value>JAVABYCODEHUNT</value>
+      <value>SPRINGBYCODEHUNT</value>
+      <value>JAVAEEBYCODEHUNT</value> 
+      </util:set>-->
+      
+      <!--3. seprate bean tag-->
+      <!-- <bean id="employee" class="com.codeHunt.spring_CodeHunt1.Employee"> 
+      <property name="eid" value="123412"></property>
+      <property name="ename" value="saurav"></property>
+      <property name="setOfBooks" ref="mySet"> </property>
+      </bean>
+      
+      <bean id="mySet" set-class="java.util.TreeSet">
+      
+      <constructor-arg>
+      <set>
+      <value>JAVABYCODEHUNT</value>
+      <value>SPRINGBYCODEHUNT</value>
+      <value>JAVAEEBYCODEHUNT</value>
+      </set>
+      </constructor-arg>  
+      </bean> -->   
+</beans>
+
+
+
