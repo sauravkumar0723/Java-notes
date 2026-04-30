@@ -1,0 +1,48 @@
+package com.kod.Jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class UpdateRecord 
+{
+	public static void main(String[] args) {
+		Connection con=null;
+		PreparedStatement ps = null;
+		Scanner sc = new Scanner(System.in);
+		
+        String dpath = "com.mysql.cj.jdbc.Driver";
+		
+		String url = "jdbc:mysql://localhost:3306/jdbcinsert?user = root & password = Saurav@123";
+		
+		String sql= "update employee set name = ? where id =?";
+		try {
+			Class.forName(dpath);
+			con = DriverManager.getConnection(url);
+			ps = con.prepareStatement(sql);
+			
+			System.out.println("Enter ID to update name of the employee");
+			int id= sc.nextInt();
+			System.out.println("Enter new name:");
+			String newName = sc.next();
+			ps.setInt(2, id);
+			ps.setString(1, newName);
+			
+			int nora = ps.executeUpdate();
+			System.out.println(nora + " row(s) updated ");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(con!=null) con.close();
+				if(ps!=null) ps.close();
+				if(sc!=null) sc.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}	
+}
+}
