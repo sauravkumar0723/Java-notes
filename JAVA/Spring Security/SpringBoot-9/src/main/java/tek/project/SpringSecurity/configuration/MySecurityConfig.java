@@ -28,28 +28,32 @@ public class MySecurityConfig {
 		.loginProcessingUrl("/doLogin")
 		.usernameParameter("user")
 		.passwordParameter("pass")
+		.and()
+		.exceptionHandling()
+		.accessDeniedPage("/test/unauthorized")
+		
 		;
 		
 		return http.build();
 	}
 	
-	@Bean
-	InMemoryUserDetailsManager inMemory() {
-		
-		UserDetails admin =  User.builder()
-	  .username("admin")
-	  .password(passwordEncoder().encode("admin123") )
-	  .roles("ADMIN")
-	  .build();
-		
-	  UserDetails member =  User.builder()
-	  .username("member")
-	  .password(passwordEncoder().encode("member123") )
-	  .roles("MEMBER")
-	  .build();
-
-		return new InMemoryUserDetailsManager(admin,member);	
-	}
+//	@Bean
+//	InMemoryUserDetailsManager inMemory() {
+//		
+//		UserDetails admin =  User.builder()
+//	  .username("admin")
+//	  .password(passwordEncoder().encode("admin123") )
+//	  .roles("ADMIN")
+//	  .build();
+//		
+//	  UserDetails member =  User.builder()
+//	  .username("member")
+//	  .password(passwordEncoder().encode("member123") )
+//	  .roles("MEMBER")
+//	  .build();
+//
+//		return new InMemoryUserDetailsManager(admin,member);	
+//	}
 	
 	@Bean
 	PasswordEncoder passwordEncoder() {

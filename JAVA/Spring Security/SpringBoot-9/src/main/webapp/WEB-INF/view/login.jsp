@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+     <%
+        if(request.getParameter("error")!=null) {
+      %>	
+            <p style="color: red;">Invalid username Or Password</p>
+      <%
+             }
+      %>
+     
         
         <form action="/doLogin" method="post">
                <input type="text" name="user" placeholder="Enter username"><br>
