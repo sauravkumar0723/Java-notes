@@ -1,0 +1,85 @@
+# Introduction | Why Java 8? | Functional Programming & Lambda Expression
+
+-- It's release date is 2014.
+-- Before Java 8 -> Java is object oreinted programming language.
+
+***In Java**
+- In java three things to do:-
+- 1. One was to enable functional programming with in java.
+- 2. Code Compact  (-> Declarative approach style of programming follow.
+                   -> Java before code genrally supported Imperative style of programming. 
+   ******CODE************
+
+package com.codhunt.java_8;
+
+import java.util.List;
+import java.util.Arrays;
+
+public class Imperative {
+	public static void main(String[] args) {
+		
+		List<Integer> list = Arrays.asList(1,2,3,4,5);
+		// Imperative : How to do?
+		for(int i = 0; i <list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+		// Declarative approach: what to do
+		list.forEach(n-> System.out.println(n));
+	}
+}
+
+*********************--------------******************
+
+- Java 8 enables function Programming.
+
+* Function Vs  Method
+-> They are interchangable
+
+Function                                 |            Method
+- Function is standalone                 |  - Method is bounded -> inside class or interface  
+- Function support declarative approach  |
+
+- Declarative Style of codeing --> means-> what to do, more abstract
+- Imperative style of coding -> how to do -> less abstract
+
+****** Functional Programming *****
+-> It is a way of programming --> means--> what happens
+-> Mainly focussed in functions.
+-> Function is mainly first class citizen.
+
+Function -- (First class citizen)
+         -> what it means?
+             Ans:- There are three things happens 
+1. An object is being hold in a variable.
+2. An object is being passed.
+3. An Object iss being returned.
+
+    var
+     |
+     |
+     |
+     Pass
+     |
+     |
+     |
+    return 
+
+Note:- whichever language which is happening how is the being object being treated in that language as first class citizen.
+
+***Attention****
+--> There is a no function in java 8.
+  --> In java 8 one concept are coming is Lambda expression.
+     |
+     --> A Lambda Expression is an expression itself. (Lambda expression behave like its expression).
+     --> It is a compact expression behave like its expression.
+     --> Bejaves --> means-->
+                            |
+                             --> Standalone
+                                 = variable hold, pass, return
+
+Note:- Java is a Object oreinted programming lanuage.In Object oreinted Language we couldn,t brings functions directly. that why a lambda expression created.
+
+Q.What does Lambda expression does?
+ --> It behaves like function, which is enables functional programming in java. through lambda expression.
+
+
